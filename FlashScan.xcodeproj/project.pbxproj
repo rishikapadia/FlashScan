@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		770264C51722067200501FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C41722067200501FC3 /* UIKit.framework */; };
+		770264C71722067200501FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C61722067200501FC3 /* Foundation.framework */; };
+		770264C91722067200501FC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C81722067200501FC3 /* CoreGraphics.framework */; };
+		770264CF1722067200501FC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770264CD1722067200501FC3 /* InfoPlist.strings */; };
+		770264D11722067200501FC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264D01722067200501FC3 /* main.m */; };
+		770264D51722067200501FC3 /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264D41722067200501FC3 /* RKAppDelegate.m */; };
+		770264D71722067200501FC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264D61722067200501FC3 /* Default.png */; };
+		770264D91722067200501FC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264D81722067200501FC3 /* Default@2x.png */; };
+		770264DB1722067200501FC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264DA1722067200501FC3 /* Default-568h@2x.png */; };
+		770264DE1722067200501FC3 /* RKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264DD1722067200501FC3 /* RKMasterViewController.m */; };
+		770264E11722067200501FC3 /* RKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264E01722067200501FC3 /* RKDetailViewController.m */; };
+		770264E41722067200501FC3 /* RKMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770264E21722067200501FC3 /* RKMasterViewController.xib */; };
+		770264E71722067200501FC3 /* RKDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770264E51722067200501FC3 /* RKDetailViewController.xib */; };
+		770264EF1722067200501FC3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264EE1722067200501FC3 /* SenTestingKit.framework */; };
+		770264F01722067200501FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C41722067200501FC3 /* UIKit.framework */; };
+		770264F11722067200501FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C61722067200501FC3 /* Foundation.framework */; };
+		770264F91722067200501FC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770264F71722067200501FC3 /* InfoPlist.strings */; };
+		770264FC1722067200501FC3 /* FlashScanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264FB1722067200501FC3 /* FlashScanTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		770264F21722067200501FC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 770264B91722067200501FC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 770264C01722067200501FC3;
+			remoteInfo = FlashScan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		770264C11722067200501FC3 /* FlashScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		770264C41722067200501FC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		770264C61722067200501FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		770264C81722067200501FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		770264CC1722067200501FC3 /* FlashScan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashScan-Info.plist"; sourceTree = "<group>"; };
+		770264CE1722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		770264D01722067200501FC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		770264D21722067200501FC3 /* FlashScan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlashScan-Prefix.pch"; sourceTree = "<group>"; };
+		770264D31722067200501FC3 /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
+		770264D41722067200501FC3 /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
+		770264D61722067200501FC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		770264D81722067200501FC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		770264DA1722067200501FC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		770264DC1722067200501FC3 /* RKMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKMasterViewController.h; sourceTree = "<group>"; };
+		770264DD1722067200501FC3 /* RKMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKMasterViewController.m; sourceTree = "<group>"; };
+		770264DF1722067200501FC3 /* RKDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKDetailViewController.h; sourceTree = "<group>"; };
+		770264E01722067200501FC3 /* RKDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKDetailViewController.m; sourceTree = "<group>"; };
+		770264E31722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RKMasterViewController.xib; sourceTree = "<group>"; };
+		770264E61722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RKDetailViewController.xib; sourceTree = "<group>"; };
+		770264ED1722067200501FC3 /* FlashScanTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashScanTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		770264EE1722067200501FC3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		770264F61722067200501FC3 /* FlashScanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashScanTests-Info.plist"; sourceTree = "<group>"; };
+		770264F81722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		770264FA1722067200501FC3 /* FlashScanTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashScanTests.h; sourceTree = "<group>"; };
+		770264FB1722067200501FC3 /* FlashScanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashScanTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		770264BE1722067200501FC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264C51722067200501FC3 /* UIKit.framework in Frameworks */,
+				770264C71722067200501FC3 /* Foundation.framework in Frameworks */,
+				770264C91722067200501FC3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		770264E91722067200501FC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264EF1722067200501FC3 /* SenTestingKit.framework in Frameworks */,
+				770264F01722067200501FC3 /* UIKit.framework in Frameworks */,
+				770264F11722067200501FC3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		770264B81722067200501FC3 = {
+			isa = PBXGroup;
+			children = (
+				770264CA1722067200501FC3 /* FlashScan */,
+				770264F41722067200501FC3 /* FlashScanTests */,
+				770264C31722067200501FC3 /* Frameworks */,
+				770264C21722067200501FC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		770264C21722067200501FC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				770264C11722067200501FC3 /* FlashScan.app */,
+				770264ED1722067200501FC3 /* FlashScanTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		770264C31722067200501FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				770264C41722067200501FC3 /* UIKit.framework */,
+				770264C61722067200501FC3 /* Foundation.framework */,
+				770264C81722067200501FC3 /* CoreGraphics.framework */,
+				770264EE1722067200501FC3 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		770264CA1722067200501FC3 /* FlashScan */ = {
+			isa = PBXGroup;
+			children = (
+				770264D31722067200501FC3 /* RKAppDelegate.h */,
+				770264D41722067200501FC3 /* RKAppDelegate.m */,
+				770264DC1722067200501FC3 /* RKMasterViewController.h */,
+				770264DD1722067200501FC3 /* RKMasterViewController.m */,
+				770264DF1722067200501FC3 /* RKDetailViewController.h */,
+				770264E01722067200501FC3 /* RKDetailViewController.m */,
+				770264E21722067200501FC3 /* RKMasterViewController.xib */,
+				770264E51722067200501FC3 /* RKDetailViewController.xib */,
+				770264CB1722067200501FC3 /* Supporting Files */,
+			);
+			path = FlashScan;
+			sourceTree = "<group>";
+		};
+		770264CB1722067200501FC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				770264CC1722067200501FC3 /* FlashScan-Info.plist */,
+				770264CD1722067200501FC3 /* InfoPlist.strings */,
+				770264D01722067200501FC3 /* main.m */,
+				770264D21722067200501FC3 /* FlashScan-Prefix.pch */,
+				770264D61722067200501FC3 /* Default.png */,
+				770264D81722067200501FC3 /* Default@2x.png */,
+				770264DA1722067200501FC3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		770264F41722067200501FC3 /* FlashScanTests */ = {
+			isa = PBXGroup;
+			children = (
+				770264FA1722067200501FC3 /* FlashScanTests.h */,
+				770264FB1722067200501FC3 /* FlashScanTests.m */,
+				770264F51722067200501FC3 /* Supporting Files */,
+			);
+			path = FlashScanTests;
+			sourceTree = "<group>";
+		};
+		770264F51722067200501FC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				770264F61722067200501FC3 /* FlashScanTests-Info.plist */,
+				770264F71722067200501FC3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		770264C01722067200501FC3 /* FlashScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 770264FF1722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScan" */;
+			buildPhases = (
+				770264BD1722067200501FC3 /* Sources */,
+				770264BE1722067200501FC3 /* Frameworks */,
+				770264BF1722067200501FC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlashScan;
+			productName = FlashScan;
+			productReference = 770264C11722067200501FC3 /* FlashScan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		770264EC1722067200501FC3 /* FlashScanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 770265021722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScanTests" */;
+			buildPhases = (
+				770264E81722067200501FC3 /* Sources */,
+				770264E91722067200501FC3 /* Frameworks */,
+				770264EA1722067200501FC3 /* Resources */,
+				770264EB1722067200501FC3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				770264F31722067200501FC3 /* PBXTargetDependency */,
+			);
+			name = FlashScanTests;
+			productName = FlashScanTests;
+			productReference = 770264ED1722067200501FC3 /* FlashScanTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		770264B91722067200501FC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RK;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Rishi Kapadia";
+			};
+			buildConfigurationList = 770264BC1722067200501FC3 /* Build configuration list for PBXProject "FlashScan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 770264B81722067200501FC3;
+			productRefGroup = 770264C21722067200501FC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				770264C01722067200501FC3 /* FlashScan */,
+				770264EC1722067200501FC3 /* FlashScanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		770264BF1722067200501FC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264CF1722067200501FC3 /* InfoPlist.strings in Resources */,
+				770264D71722067200501FC3 /* Default.png in Resources */,
+				770264D91722067200501FC3 /* Default@2x.png in Resources */,
+				770264DB1722067200501FC3 /* Default-568h@2x.png in Resources */,
+				770264E41722067200501FC3 /* RKMasterViewController.xib in Resources */,
+				770264E71722067200501FC3 /* RKDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		770264EA1722067200501FC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264F91722067200501FC3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		770264EB1722067200501FC3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		770264BD1722067200501FC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264D11722067200501FC3 /* main.m in Sources */,
+				770264D51722067200501FC3 /* RKAppDelegate.m in Sources */,
+				770264DE1722067200501FC3 /* RKMasterViewController.m in Sources */,
+				770264E11722067200501FC3 /* RKDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		770264E81722067200501FC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770264FC1722067200501FC3 /* FlashScanTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		770264F31722067200501FC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 770264C01722067200501FC3 /* FlashScan */;
+			targetProxy = 770264F21722067200501FC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		770264CD1722067200501FC3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				770264CE1722067200501FC3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		770264E21722067200501FC3 /* RKMasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				770264E31722067200501FC3 /* en */,
+			);
+			name = RKMasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		770264E51722067200501FC3 /* RKDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				770264E61722067200501FC3 /* en */,
+			);
+			name = RKDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		770264F71722067200501FC3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				770264F81722067200501FC3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		770264FD1722067200501FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		770264FE1722067200501FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		770265001722067200501FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
+				INFOPLIST_FILE = "FlashScan/FlashScan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		770265011722067200501FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
+				INFOPLIST_FILE = "FlashScan/FlashScan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		770265031722067200501FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlashScan.app/FlashScan";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
+				INFOPLIST_FILE = "FlashScanTests/FlashScanTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		770265041722067200501FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlashScan.app/FlashScan";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
+				INFOPLIST_FILE = "FlashScanTests/FlashScanTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		770264BC1722067200501FC3 /* Build configuration list for PBXProject "FlashScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				770264FD1722067200501FC3 /* Debug */,
+				770264FE1722067200501FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		770264FF1722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				770265001722067200501FC3 /* Debug */,
+				770265011722067200501FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		770265021722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				770265031722067200501FC3 /* Debug */,
+				770265041722067200501FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 770264B91722067200501FC3 /* Project object */;
+}
