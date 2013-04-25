@@ -12,30 +12,59 @@
 		770264C91722067200501FC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C81722067200501FC3 /* CoreGraphics.framework */; };
 		770264CF1722067200501FC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770264CD1722067200501FC3 /* InfoPlist.strings */; };
 		770264D11722067200501FC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264D01722067200501FC3 /* main.m */; };
-		770264D51722067200501FC3 /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264D41722067200501FC3 /* RKAppDelegate.m */; };
+		770264D51722067200501FC3 /* RKAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 770264D41722067200501FC3 /* RKAppDelegate.mm */; };
 		770264D71722067200501FC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264D61722067200501FC3 /* Default.png */; };
 		770264D91722067200501FC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264D81722067200501FC3 /* Default@2x.png */; };
 		770264DB1722067200501FC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770264DA1722067200501FC3 /* Default-568h@2x.png */; };
-		770264DE1722067200501FC3 /* RKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264DD1722067200501FC3 /* RKMasterViewController.m */; };
-		770264E11722067200501FC3 /* RKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264E01722067200501FC3 /* RKDetailViewController.m */; };
+		770264DE1722067200501FC3 /* RKMasterViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 770264DD1722067200501FC3 /* RKMasterViewController.mm */; };
 		770264E41722067200501FC3 /* RKMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770264E21722067200501FC3 /* RKMasterViewController.xib */; };
 		770264E71722067200501FC3 /* RKDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770264E51722067200501FC3 /* RKDetailViewController.xib */; };
-		770264EF1722067200501FC3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264EE1722067200501FC3 /* SenTestingKit.framework */; };
-		770264F01722067200501FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C41722067200501FC3 /* UIKit.framework */; };
-		770264F11722067200501FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770264C61722067200501FC3 /* Foundation.framework */; };
-		770264F91722067200501FC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770264F71722067200501FC3 /* InfoPlist.strings */; };
-		770264FC1722067200501FC3 /* FlashScanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 770264FB1722067200501FC3 /* FlashScanTests.m */; };
+		7702650717220B1900501FC3 /* RKFlashCard.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7702650617220B1900501FC3 /* RKFlashCard.mm */; };
+		7702650A17220B3C00501FC3 /* RKView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7702650917220B3C00501FC3 /* RKView.mm */; };
+		7702650D17220B5A00501FC3 /* RKModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7702650C17220B5A00501FC3 /* RKModel.mm */; };
+		77026551172211D300501FC3 /* OCRViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 77026542172211D300501FC3 /* OCRViewController.mm */; };
+		77026552172211D300501FC3 /* OCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77026543172211D300501FC3 /* OCRViewController.xib */; };
+		7702655C17225B6C00501FC3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702655B17225B6C00501FC3 /* QuartzCore.framework */; };
+		7702655E17225B8C00501FC3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702655D17225B8C00501FC3 /* OpenGLES.framework */; };
+		7702656F1722646000501FC3 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702656E1722646000501FC3 /* libtesseract_full.a */; };
+		7708B8291727A5AA00570D1A /* RKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708B8271727A5AA00570D1A /* RKListViewController.m */; };
+		7708B82A1727A5AA00570D1A /* RKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7708B8281727A5AA00570D1A /* RKListViewController.xib */; };
+		773CE22E1728A9BB00E84388 /* RKCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773CE22C1728A9BB00E84388 /* RKCardViewController.m */; };
+		773CE22F1728A9BB00E84388 /* RKCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773CE22D1728A9BB00E84388 /* RKCardViewController.xib */; };
+		773CE2331728F04800E84388 /* RKListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773CE2311728F04800E84388 /* RKListSelectViewController.m */; };
+		773CE2341728F04800E84388 /* RKListSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773CE2321728F04800E84388 /* RKListSelectViewController.xib */; };
+		7798F6E41728FC6A008C48EE /* flashcards.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7798F6E31728FC6A008C48EE /* flashcards.jpeg */; };
+		7798F6E81728FD75008C48EE /* RKAddCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7798F6E61728FD75008C48EE /* RKAddCardViewController.m */; };
+		7798F6E91728FD75008C48EE /* RKAddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */; };
+		77D1DAB9172764E4005186B1 /* eng.DangAmbigs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77026545172211D300501FC3 /* eng.DangAmbigs */; };
+		77D1DABA172764E4005186B1 /* eng.freq-dawg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77026546172211D300501FC3 /* eng.freq-dawg */; };
+		77D1DABB172764E4005186B1 /* eng.inttemp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77026547172211D300501FC3 /* eng.inttemp */; };
+		77D1DABC172764E4005186B1 /* eng.normproto in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77026548172211D300501FC3 /* eng.normproto */; };
+		77D1DABD172764E4005186B1 /* eng.pffmtable in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77026549172211D300501FC3 /* eng.pffmtable */; };
+		77D1DABE172764E4005186B1 /* eng.unicharset in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654A172211D300501FC3 /* eng.unicharset */; };
+		77D1DABF172764E4005186B1 /* eng.user-words in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654B172211D300501FC3 /* eng.user-words */; };
+		77D1DAC0172764E4005186B1 /* eng.word-dawg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654C172211D300501FC3 /* eng.word-dawg */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		770264F21722067200501FC3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 770264B91722067200501FC3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 770264C01722067200501FC3;
-			remoteInfo = FlashScan;
+/* Begin PBXCopyFilesBuildPhase section */
+		77D1DAB8172764D1005186B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = tessdata;
+			dstSubfolderSpec = 7;
+			files = (
+				77D1DAB9172764E4005186B1 /* eng.DangAmbigs in CopyFiles */,
+				77D1DABA172764E4005186B1 /* eng.freq-dawg in CopyFiles */,
+				77D1DABB172764E4005186B1 /* eng.inttemp in CopyFiles */,
+				77D1DABC172764E4005186B1 /* eng.normproto in CopyFiles */,
+				77D1DABD172764E4005186B1 /* eng.pffmtable in CopyFiles */,
+				77D1DABE172764E4005186B1 /* eng.unicharset in CopyFiles */,
+				77D1DABF172764E4005186B1 /* eng.user-words in CopyFiles */,
+				77D1DAC0172764E4005186B1 /* eng.word-dawg in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		770264C11722067200501FC3 /* FlashScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,22 +76,51 @@
 		770264D01722067200501FC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		770264D21722067200501FC3 /* FlashScan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlashScan-Prefix.pch"; sourceTree = "<group>"; };
 		770264D31722067200501FC3 /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
-		770264D41722067200501FC3 /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
+		770264D41722067200501FC3 /* RKAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RKAppDelegate.mm; sourceTree = "<group>"; };
 		770264D61722067200501FC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		770264D81722067200501FC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		770264DA1722067200501FC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		770264DC1722067200501FC3 /* RKMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKMasterViewController.h; sourceTree = "<group>"; };
-		770264DD1722067200501FC3 /* RKMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKMasterViewController.m; sourceTree = "<group>"; };
+		770264DD1722067200501FC3 /* RKMasterViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RKMasterViewController.mm; sourceTree = "<group>"; };
 		770264DF1722067200501FC3 /* RKDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKDetailViewController.h; sourceTree = "<group>"; };
-		770264E01722067200501FC3 /* RKDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKDetailViewController.m; sourceTree = "<group>"; };
+		770264E01722067200501FC3 /* RKDetailViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RKDetailViewController.mm; sourceTree = "<group>"; };
 		770264E31722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RKMasterViewController.xib; sourceTree = "<group>"; };
 		770264E61722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RKDetailViewController.xib; sourceTree = "<group>"; };
-		770264ED1722067200501FC3 /* FlashScanTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashScanTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		770264EE1722067200501FC3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		770264F61722067200501FC3 /* FlashScanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashScanTests-Info.plist"; sourceTree = "<group>"; };
-		770264F81722067200501FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		770264FA1722067200501FC3 /* FlashScanTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashScanTests.h; sourceTree = "<group>"; };
-		770264FB1722067200501FC3 /* FlashScanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashScanTests.m; sourceTree = "<group>"; };
+		7702650517220B1900501FC3 /* RKFlashCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKFlashCard.h; sourceTree = "<group>"; };
+		7702650617220B1900501FC3 /* RKFlashCard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RKFlashCard.mm; sourceTree = "<group>"; };
+		7702650817220B3C00501FC3 /* RKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKView.h; sourceTree = "<group>"; };
+		7702650917220B3C00501FC3 /* RKView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RKView.mm; sourceTree = "<group>"; };
+		7702650B17220B5A00501FC3 /* RKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKModel.h; sourceTree = "<group>"; };
+		7702650C17220B5A00501FC3 /* RKModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RKModel.mm; sourceTree = "<group>"; };
+		7702653A172211D300501FC3 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
+		77026541172211D300501FC3 /* OCRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRViewController.h; sourceTree = "<group>"; };
+		77026542172211D300501FC3 /* OCRViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCRViewController.mm; sourceTree = "<group>"; };
+		77026543172211D300501FC3 /* OCRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCRViewController.xib; sourceTree = "<group>"; };
+		77026545172211D300501FC3 /* eng.DangAmbigs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.DangAmbigs; sourceTree = "<group>"; };
+		77026546172211D300501FC3 /* eng.freq-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.freq-dawg"; sourceTree = "<group>"; };
+		77026547172211D300501FC3 /* eng.inttemp */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.inttemp; sourceTree = "<group>"; };
+		77026548172211D300501FC3 /* eng.normproto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.normproto; sourceTree = "<group>"; };
+		77026549172211D300501FC3 /* eng.pffmtable */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.pffmtable; sourceTree = "<group>"; };
+		7702654A172211D300501FC3 /* eng.unicharset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.unicharset; sourceTree = "<group>"; };
+		7702654B172211D300501FC3 /* eng.user-words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "eng.user-words"; sourceTree = "<group>"; };
+		7702654C172211D300501FC3 /* eng.word-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.word-dawg"; sourceTree = "<group>"; };
+		7702655B17225B6C00501FC3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7702655D17225B8C00501FC3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7702656E1722646000501FC3 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtesseract_full.a; path = Resources/libtesseract_full.a; sourceTree = "<group>"; };
+		7708B8261727A5AA00570D1A /* RKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKListViewController.h; path = "List View/RKListViewController.h"; sourceTree = "<group>"; };
+		7708B8271727A5AA00570D1A /* RKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKListViewController.m; path = "List View/RKListViewController.m"; sourceTree = "<group>"; };
+		7708B8281727A5AA00570D1A /* RKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKListViewController.xib; path = "List View/RKListViewController.xib"; sourceTree = "<group>"; };
+		773CE22B1728A9BB00E84388 /* RKCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKCardViewController.h; path = "Card View/RKCardViewController.h"; sourceTree = "<group>"; };
+		773CE22C1728A9BB00E84388 /* RKCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKCardViewController.m; path = "Card View/RKCardViewController.m"; sourceTree = "<group>"; };
+		773CE22D1728A9BB00E84388 /* RKCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKCardViewController.xib; path = "Card View/RKCardViewController.xib"; sourceTree = "<group>"; };
+		773CE2301728F04800E84388 /* RKListSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKListSelectViewController.h; path = "List View/RKListSelectViewController.h"; sourceTree = "<group>"; };
+		773CE2311728F04800E84388 /* RKListSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKListSelectViewController.m; path = "List View/RKListSelectViewController.m"; sourceTree = "<group>"; };
+		773CE2321728F04800E84388 /* RKListSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKListSelectViewController.xib; path = "List View/RKListSelectViewController.xib"; sourceTree = "<group>"; };
+		7798F6E31728FC6A008C48EE /* flashcards.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = flashcards.jpeg; path = Resources/flashcards.jpeg; sourceTree = "<group>"; };
+		7798F6E51728FD75008C48EE /* RKAddCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAddCardViewController.h; path = "Card View/RKAddCardViewController.h"; sourceTree = "<group>"; };
+		7798F6E61728FD75008C48EE /* RKAddCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAddCardViewController.m; path = "Card View/RKAddCardViewController.m"; sourceTree = "<group>"; };
+		7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKAddCardViewController.xib; path = "Card View/RKAddCardViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,16 +131,9 @@
 				770264C51722067200501FC3 /* UIKit.framework in Frameworks */,
 				770264C71722067200501FC3 /* Foundation.framework in Frameworks */,
 				770264C91722067200501FC3 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		770264E91722067200501FC3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				770264EF1722067200501FC3 /* SenTestingKit.framework in Frameworks */,
-				770264F01722067200501FC3 /* UIKit.framework in Frameworks */,
-				770264F11722067200501FC3 /* Foundation.framework in Frameworks */,
+				7702655C17225B6C00501FC3 /* QuartzCore.framework in Frameworks */,
+				7702655E17225B8C00501FC3 /* OpenGLES.framework in Frameworks */,
+				7702656F1722646000501FC3 /* libtesseract_full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +143,11 @@
 		770264B81722067200501FC3 = {
 			isa = PBXGroup;
 			children = (
-				770264CA1722067200501FC3 /* FlashScan */,
-				770264F41722067200501FC3 /* FlashScanTests */,
+				77026539172211D300501FC3 /* OCR */,
+				7702650E17220EB000501FC3 /* Resources */,
+				770264CA1722067200501FC3 /* FlashScan - Main */,
+				773CE22A1728A88000E84388 /* Card View */,
+				7702650F17220F3200501FC3 /* List View */,
 				770264C31722067200501FC3 /* Frameworks */,
 				770264C21722067200501FC3 /* Products */,
 			);
@@ -103,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				770264C11722067200501FC3 /* FlashScan.app */,
-				770264ED1722067200501FC3 /* FlashScanTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +164,9 @@
 		770264C31722067200501FC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7702656E1722646000501FC3 /* libtesseract_full.a */,
+				7702655D17225B8C00501FC3 /* OpenGLES.framework */,
+				7702655B17225B6C00501FC3 /* QuartzCore.framework */,
 				770264C41722067200501FC3 /* UIKit.framework */,
 				770264C61722067200501FC3 /* Foundation.framework */,
 				770264C81722067200501FC3 /* CoreGraphics.framework */,
@@ -119,25 +175,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		770264CA1722067200501FC3 /* FlashScan */ = {
+		770264CA1722067200501FC3 /* FlashScan - Main */ = {
 			isa = PBXGroup;
 			children = (
 				770264D31722067200501FC3 /* RKAppDelegate.h */,
-				770264D41722067200501FC3 /* RKAppDelegate.m */,
+				770264D41722067200501FC3 /* RKAppDelegate.mm */,
+				7702650517220B1900501FC3 /* RKFlashCard.h */,
+				7702650617220B1900501FC3 /* RKFlashCard.mm */,
+				7702650817220B3C00501FC3 /* RKView.h */,
+				7702650917220B3C00501FC3 /* RKView.mm */,
+				7702650B17220B5A00501FC3 /* RKModel.h */,
+				7702650C17220B5A00501FC3 /* RKModel.mm */,
 				770264DC1722067200501FC3 /* RKMasterViewController.h */,
-				770264DD1722067200501FC3 /* RKMasterViewController.m */,
-				770264DF1722067200501FC3 /* RKDetailViewController.h */,
-				770264E01722067200501FC3 /* RKDetailViewController.m */,
+				770264DD1722067200501FC3 /* RKMasterViewController.mm */,
 				770264E21722067200501FC3 /* RKMasterViewController.xib */,
-				770264E51722067200501FC3 /* RKDetailViewController.xib */,
 				770264CB1722067200501FC3 /* Supporting Files */,
 			);
+			name = "FlashScan - Main";
 			path = FlashScan;
 			sourceTree = "<group>";
 		};
 		770264CB1722067200501FC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				770264DF1722067200501FC3 /* RKDetailViewController.h */,
+				770264E01722067200501FC3 /* RKDetailViewController.mm */,
+				770264E51722067200501FC3 /* RKDetailViewController.xib */,
 				770264CC1722067200501FC3 /* FlashScan-Info.plist */,
 				770264CD1722067200501FC3 /* InfoPlist.strings */,
 				770264D01722067200501FC3 /* main.m */,
@@ -149,23 +212,65 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		770264F41722067200501FC3 /* FlashScanTests */ = {
+		7702650E17220EB000501FC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				770264FA1722067200501FC3 /* FlashScanTests.h */,
-				770264FB1722067200501FC3 /* FlashScanTests.m */,
-				770264F51722067200501FC3 /* Supporting Files */,
+				7798F6E31728FC6A008C48EE /* flashcards.jpeg */,
 			);
-			path = FlashScanTests;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		770264F51722067200501FC3 /* Supporting Files */ = {
+		7702650F17220F3200501FC3 /* List View */ = {
 			isa = PBXGroup;
 			children = (
-				770264F61722067200501FC3 /* FlashScanTests-Info.plist */,
-				770264F71722067200501FC3 /* InfoPlist.strings */,
+				7708B8261727A5AA00570D1A /* RKListViewController.h */,
+				7708B8271727A5AA00570D1A /* RKListViewController.m */,
+				7708B8281727A5AA00570D1A /* RKListViewController.xib */,
+				773CE2301728F04800E84388 /* RKListSelectViewController.h */,
+				773CE2311728F04800E84388 /* RKListSelectViewController.m */,
+				773CE2321728F04800E84388 /* RKListSelectViewController.xib */,
 			);
-			name = "Supporting Files";
+			name = "List View";
+			sourceTree = "<group>";
+		};
+		77026539172211D300501FC3 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				77026541172211D300501FC3 /* OCRViewController.h */,
+				77026542172211D300501FC3 /* OCRViewController.mm */,
+				77026543172211D300501FC3 /* OCRViewController.xib */,
+				77026544172211D300501FC3 /* tessdata */,
+				7702653A172211D300501FC3 /* baseapi.h */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		77026544172211D300501FC3 /* tessdata */ = {
+			isa = PBXGroup;
+			children = (
+				77026545172211D300501FC3 /* eng.DangAmbigs */,
+				77026546172211D300501FC3 /* eng.freq-dawg */,
+				77026547172211D300501FC3 /* eng.inttemp */,
+				77026548172211D300501FC3 /* eng.normproto */,
+				77026549172211D300501FC3 /* eng.pffmtable */,
+				7702654A172211D300501FC3 /* eng.unicharset */,
+				7702654B172211D300501FC3 /* eng.user-words */,
+				7702654C172211D300501FC3 /* eng.word-dawg */,
+			);
+			path = tessdata;
+			sourceTree = "<group>";
+		};
+		773CE22A1728A88000E84388 /* Card View */ = {
+			isa = PBXGroup;
+			children = (
+				773CE22B1728A9BB00E84388 /* RKCardViewController.h */,
+				773CE22C1728A9BB00E84388 /* RKCardViewController.m */,
+				773CE22D1728A9BB00E84388 /* RKCardViewController.xib */,
+				7798F6E51728FD75008C48EE /* RKAddCardViewController.h */,
+				7798F6E61728FD75008C48EE /* RKAddCardViewController.m */,
+				7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */,
+			);
+			name = "Card View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +283,7 @@
 				770264BD1722067200501FC3 /* Sources */,
 				770264BE1722067200501FC3 /* Frameworks */,
 				770264BF1722067200501FC3 /* Resources */,
+				77D1DAB8172764D1005186B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -187,25 +293,6 @@
 			productName = FlashScan;
 			productReference = 770264C11722067200501FC3 /* FlashScan.app */;
 			productType = "com.apple.product-type.application";
-		};
-		770264EC1722067200501FC3 /* FlashScanTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 770265021722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScanTests" */;
-			buildPhases = (
-				770264E81722067200501FC3 /* Sources */,
-				770264E91722067200501FC3 /* Frameworks */,
-				770264EA1722067200501FC3 /* Resources */,
-				770264EB1722067200501FC3 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				770264F31722067200501FC3 /* PBXTargetDependency */,
-			);
-			name = FlashScanTests;
-			productName = FlashScanTests;
-			productReference = 770264ED1722067200501FC3 /* FlashScanTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -230,7 +317,6 @@
 			projectRoot = "";
 			targets = (
 				770264C01722067200501FC3 /* FlashScan */,
-				770264EC1722067200501FC3 /* FlashScanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,34 +332,16 @@
 				770264DB1722067200501FC3 /* Default-568h@2x.png in Resources */,
 				770264E41722067200501FC3 /* RKMasterViewController.xib in Resources */,
 				770264E71722067200501FC3 /* RKDetailViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		770264EA1722067200501FC3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				770264F91722067200501FC3 /* InfoPlist.strings in Resources */,
+				77026552172211D300501FC3 /* OCRViewController.xib in Resources */,
+				7708B82A1727A5AA00570D1A /* RKListViewController.xib in Resources */,
+				773CE22F1728A9BB00E84388 /* RKCardViewController.xib in Resources */,
+				773CE2341728F04800E84388 /* RKListSelectViewController.xib in Resources */,
+				7798F6E41728FC6A008C48EE /* flashcards.jpeg in Resources */,
+				7798F6E91728FD75008C48EE /* RKAddCardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		770264EB1722067200501FC3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		770264BD1722067200501FC3 /* Sources */ = {
@@ -281,29 +349,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				770264D11722067200501FC3 /* main.m in Sources */,
-				770264D51722067200501FC3 /* RKAppDelegate.m in Sources */,
-				770264DE1722067200501FC3 /* RKMasterViewController.m in Sources */,
-				770264E11722067200501FC3 /* RKDetailViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		770264E81722067200501FC3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				770264FC1722067200501FC3 /* FlashScanTests.m in Sources */,
+				770264D51722067200501FC3 /* RKAppDelegate.mm in Sources */,
+				770264DE1722067200501FC3 /* RKMasterViewController.mm in Sources */,
+				7702650717220B1900501FC3 /* RKFlashCard.mm in Sources */,
+				7702650A17220B3C00501FC3 /* RKView.mm in Sources */,
+				7702650D17220B5A00501FC3 /* RKModel.mm in Sources */,
+				77026551172211D300501FC3 /* OCRViewController.mm in Sources */,
+				7708B8291727A5AA00570D1A /* RKListViewController.m in Sources */,
+				773CE22E1728A9BB00E84388 /* RKCardViewController.m in Sources */,
+				773CE2331728F04800E84388 /* RKListSelectViewController.m in Sources */,
+				7798F6E81728FD75008C48EE /* RKAddCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		770264F31722067200501FC3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 770264C01722067200501FC3 /* FlashScan */;
-			targetProxy = 770264F21722067200501FC3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		770264CD1722067200501FC3 /* InfoPlist.strings */ = {
@@ -328,14 +387,6 @@
 				770264E61722067200501FC3 /* en */,
 			);
 			name = RKDetailViewController.xib;
-			sourceTree = "<group>";
-		};
-		770264F71722067200501FC3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				770264F81722067200501FC3 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -398,9 +449,14 @@
 		770265001722067200501FC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
 				INFOPLIST_FILE = "FlashScan/FlashScan-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Resources\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,45 +465,16 @@
 		770265011722067200501FC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
 				INFOPLIST_FILE = "FlashScan/FlashScan-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Resources\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		770265031722067200501FC3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlashScan.app/FlashScan";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
-				INFOPLIST_FILE = "FlashScanTests/FlashScanTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		770265041722067200501FC3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlashScan.app/FlashScan";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FlashScan/FlashScan-Prefix.pch";
-				INFOPLIST_FILE = "FlashScanTests/FlashScanTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -470,14 +497,7 @@
 				770265011722067200501FC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		770265021722067200501FC3 /* Build configuration list for PBXNativeTarget "FlashScanTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				770265031722067200501FC3 /* Debug */,
-				770265041722067200501FC3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,29 +7,33 @@
 //
 
 #import "RKMasterViewController.h"
+#import "OCRViewController.h"
+#import "RKListViewController.h"
 
-#import "RKDetailViewController.h"
 
+/*
 @interface RKMasterViewController () {
     NSMutableArray *_objects;
 }
 @end
-
+*/
 @implementation RKMasterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = NSLocalizedString(@"Menu", @"Menu");
+        _model = [RKModel sharedModel];
     }
     return self;
 }
 							
 - (void)dealloc
 {
-    [_detailViewController release];
-    [_objects release];
+    //[_detailViewController release];
+    //[_objects release];
+    [_model release];
     [super dealloc];
 }
 
@@ -37,10 +41,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
+    //self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +53,54 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)viewLists:(id)sender
+{
+    NSLog(@"Opening list view...");
+    RKListViewController *lvc = [[RKListViewController alloc] initWithNibName:@"RKListViewController" bundle:[NSBundle mainBundle]];
+    [[self navigationController] pushViewController:lvc animated:YES];
+    [lvc release];
+    NSLog(@"...opened!");
+    NSLog(@"%d", [[_model lists] count]);
+}
+
+- (IBAction)createList:(id)sender
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Creating New List..." message:@"Please enter the name of your list:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeDefault;
+    alertTextField.placeholder = @"Enter list name";
+    [alert show];
+    [alert release];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+        return;
+    else if (buttonIndex == 1)
+    {
+        NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+        //add new list to model
+        [_model addListWithName:[[alertView textFieldAtIndex:0] text]];
+    }
+}
+
+- (IBAction)convertPicture:(id)sender
+{
+    NSLog(@"converting picture...");
+    OCRViewController *ocr = [[OCRViewController alloc] initWithNibName:@"OCRViewController" bundle:nil];
+    [[self navigationController] pushViewController:ocr animated:YES];
+    [ocr release];
+    NSLog(@"...converted!");
+}
+
+
+
+
+
+/*
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
@@ -103,7 +155,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
+*/
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -119,7 +171,7 @@
     return YES;
 }
 */
-
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.detailViewController) {
@@ -129,5 +181,5 @@
     self.detailViewController.detailItem = object;
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
-
+*/
 @end

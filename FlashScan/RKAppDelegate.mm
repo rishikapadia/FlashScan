@@ -7,7 +7,6 @@
 //
 
 #import "RKAppDelegate.h"
-
 #import "RKMasterViewController.h"
 
 @implementation RKAppDelegate
@@ -15,6 +14,7 @@
 - (void)dealloc
 {
     [_window release];
+    //[_viewController release];
     [_navigationController release];
     [super dealloc];
 }
@@ -23,13 +23,34 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-
     RKMasterViewController *masterViewController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+    
+    //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    //    self.navigationController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];
+    //} else {
+    //    self.viewController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];
+    //}
+    //self.window.rootViewController = self.viewController;
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+/*
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    // Override point for customization after application launch.
+
+    RKMasterViewController *masterViewController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];
+    //self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+    //self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+ */
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

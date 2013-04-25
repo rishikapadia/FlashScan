@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKView.h"
+#import "RKModel.h"
 
-@class RKDetailViewController;
+//@class RKDetailViewController;
 
-@interface RKMasterViewController : UITableViewController
 
-@property (strong, nonatomic) RKDetailViewController *detailViewController;
+@interface RKMasterViewController : UIViewController <UIAlertViewDelegate>
+{
+    @private
+    RKModel* _model;
+}
+
+//@property (strong, nonatomic) RKDetailViewController *detailViewController;
+
+- (IBAction)viewLists:(id)sender;
+- (IBAction)createList:(id)sender;
+- (IBAction)convertPicture:(id)sender;
+
+//settings button/pop-up alert
 
 @end

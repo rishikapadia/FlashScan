@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class RKMasterViewController;
+
 @interface RKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) RKMasterViewController *viewController;
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 
