@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #import "RKFlashCard.h"
 
-@interface RKModel : NSObject
+@interface RKModel : NSObject //<NSCoding>
 {
     NSMutableArray *lists;
 }
@@ -19,6 +19,7 @@
 
 +(RKModel*) sharedModel;
 -(NSString*)getListName:(UInt32)index;
+-(void)writeToNSUerDefaults;
 
 -(void)addListWithName:(NSString*)listName;
 -(void)addCardtoList:(UInt32)index

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKModel.h"
 
 @class RKMasterViewController;
 

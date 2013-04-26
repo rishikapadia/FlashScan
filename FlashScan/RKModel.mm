@@ -11,7 +11,7 @@
 static RKModel* gSharedModel;
 
 
-@interface RKList : NSObject
+@interface RKList : NSObject <NSCoding>
 {
     UInt32 numberOfCards;
     NSMutableArray *cards;
@@ -105,6 +105,22 @@ static RKModel* gSharedModel;
     [cards replaceObjectAtIndex:cardIndex withObject:card];
 }
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.numberOfCards = [decoder decodeIntegerForKey:@"numberOfCards"];
+        self.cards = [decoder decodeObjectForKey:@"cards"];
+        self.name = [decoder decodeObjectForKey:@"name"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    NSInteger value = numberOfCards;
+    [encoder encodeInteger:value forKey:@"numberOfCards"];
+    [encoder encodeObject:cards forKey:@"cards"];
+    [encoder encodeObject:name forKey:@"name"];
+}
+
 @end
 
 
@@ -121,10 +137,35 @@ static RKModel* gSharedModel;
     self = [super init];
     if (self != nil)
     {
-        lists = [[NSMutableArray alloc] init];
+        NSData *archivedLists = [[NSUserDefaults standardUserDefaults] dataForKey:kUserDefaultsListsKey];
+        if (archivedLists) {
+            NSArray *unarchivedLists = [NSKeyedUnarchiver unarchiveObjectWithData:archivedLists];
+            lists = [[unarchivedLists mutableCopy] retain];
+        } else {
+            lists = [[NSMutableArray alloc] init];
+        }
     }
     return self;
 }
+
+-(void)dealloc
+{
+    [lists release];
+    [super dealloc];
+}
+
+//-(id)initWithLists:(NSMutableArray*)arrayLists
+//{
+//    self = [super init];
+//    if (self != nil)
+//    {
+//        lists = arrayLists;
+//        [lists retain];
+//    }
+//    return self;
+//}
+
+
 
 -(void)addListWithName:(NSString *)listName
 {
@@ -170,6 +211,14 @@ static RKModel* gSharedModel;
     [[lists objectAtIndex:index] sort];
 }
 
+-(void)writeToNSUerDefaults
+{
+    NSUserDefaults *stdDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *copy = [NSKeyedArchiver archivedDataWithRootObject:lists];
+    [stdDefaults setObject:copy forKey:kUserDefaultsListsKey];
+    [stdDefaults synchronize];
+}
+
 -(NSString*)getListName:(UInt32)index
 {
 
@@ -184,6 +233,17 @@ static RKModel* gSharedModel;
         gSharedModel = [[RKModel alloc] init];
     }
     return gSharedModel;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.lists = [decoder decodeObjectForKey:@"lists"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:lists forKey:@"lists"];
 }
 
 @end

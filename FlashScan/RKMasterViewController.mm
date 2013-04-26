@@ -33,6 +33,7 @@
 {
     //[_detailViewController release];
     //[_objects release];
+    //[_model writeToNSUerDefaults];
     [_model release];
     [super dealloc];
 }
