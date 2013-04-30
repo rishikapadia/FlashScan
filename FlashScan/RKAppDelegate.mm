@@ -23,8 +23,12 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    //self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     RKMasterViewController *masterViewController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"abstract.jpg"]];
+    self.navigationController.navigationBar.alpha = 0.7f;
+    self.navigationController.navigationBar.translucent = YES;
     
     //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     //    self.navigationController = [[[RKMasterViewController alloc] initWithNibName:@"RKMasterViewController" bundle:nil] autorelease];

@@ -128,6 +128,8 @@ static RKModel* gSharedModel;
 
 
 
+
+
 @implementation RKModel
 
 @synthesize lists;
@@ -154,39 +156,26 @@ static RKModel* gSharedModel;
     [super dealloc];
 }
 
-//-(id)initWithLists:(NSMutableArray*)arrayLists
-//{
-//    self = [super init];
-//    if (self != nil)
-//    {
-//        lists = arrayLists;
-//        [lists retain];
-//    }
-//    return self;
-//}
-
-
-
 -(void)addListWithName:(NSString *)listName
 {
     [lists addObject:[[RKList alloc] initWithName:listName]];
 }
 
 -(void)addCardtoList:(UInt32)index
-    frontText:(NSString *)frontText frontImage:(UIImage *)frontImage
-    backText:(NSString *)backText backImage:(UIImage *)backImage
+    card:(RKFlashCard *)card
 {
-    //
+    [[lists objectAtIndex:index] addCard:card];
 }
 
 -(void)removeListAtIndex:(UInt32)index
 {
-    //
+    [lists removeObjectAtIndex:index];
 }
 
 -(void)removeCardFromListIndex:(UInt32)listIndex cardIndex:(UInt32)cardIndex
 {
-    //
+    RKList* temp = [lists objectAtIndex:listIndex];
+    [temp removeCardAtIndex:cardIndex];
 }
 
 -(void)editCardInList:(UInt32)listIndex cardIndex:(UInt32)cardIndex
@@ -244,6 +233,12 @@ static RKModel* gSharedModel;
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:lists forKey:@"lists"];
+}
+
+-(NSMutableArray*)getCardListAtIndex:(UInt32)index
+{
+    RKList* temp = [lists objectAtIndex:index];
+    return temp.cards;
 }
 
 @end

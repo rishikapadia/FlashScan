@@ -8,14 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import "RKModel.h"
+#import "RKFlashCard.h"
 
-@interface RKAddCardViewController : UIViewController
+@interface RKAddCardViewController : UIViewController <UIImagePickerControllerDelegate>
 {
 @private
     RKModel* _model;
     UInt32 _listIndex;
+    RKFlashCard* curr;
+    
+    UILabel* front;
+    UILabel* back;
+    UIButton* front1;
+    UIButton* back1;
+    UIButton* front2;
+    UIButton* back2;
+    UIButton* front3;
+    UIButton* back3;
 }
+@property (retain, nonatomic) IBOutlet UILabel *front;
+@property (retain, nonatomic) IBOutlet UILabel *back;
+@property (retain, nonatomic) IBOutlet UIButton *front1;
+@property (retain, nonatomic) IBOutlet UIButton *front2;
+@property (retain, nonatomic) IBOutlet UIButton *front3;
+@property (retain, nonatomic) IBOutlet UIButton *back1;
+@property (retain, nonatomic) IBOutlet UIButton *back2;
+@property (retain, nonatomic) IBOutlet UIButton *back3;
 
 -(void)listIndex:(UInt32)index;
+
+- (IBAction)textFront:(id)sender;
+- (IBAction)textBack:(id)sender;
+- (IBAction)addPicFront:(id)sender;
+- (IBAction)addPicBack:(id)sender;
+- (IBAction)scanFront:(id)sender;
+- (IBAction)scanBack:(id)sender;
 
 @end

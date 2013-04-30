@@ -19,9 +19,15 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
+
     }
     return self;
+}
+
+-(void) dealloc
+{
+    [_model release];
+    [super dealloc];
 }
 
 - (void)viewDidLoad
@@ -34,6 +40,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _model = [RKModel sharedModel];
+    [_model retain];
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+        initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 2.0; //seconds
+    lpgr.delegate = self;
+    [self.tableView addGestureRecognizer:lpgr];
+    [lpgr release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,28 +91,93 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+- (UITableViewCellEditingStyle) tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //NSLog(indexPath);
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning:" message:[[@"Are you sure you want to delete " stringByAppendingString:[_model getListName:indexPath.row]] stringByAppendingString:@"?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
+        alert.tag = 1;
+        [alert show];
+        [alert release];
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject: indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1)
+    {
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        //NSLog(path);
+        if (buttonIndex != [alertView cancelButtonIndex]) {
+            //delete from the data source
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:path] withRowAnimation:UITableViewRowAnimationFade];
+            [_model removeListAtIndex:path.row];
+        }
+    }
+    else if (alertView.tag == 2)
+    {
+        if (buttonIndex == 0)
+            return;
+        else if (buttonIndex == 1)
+        {
+            NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+            //change list's name
+            [_model changeNameOfListAtIndex:listIndexToChange toName:[[alertView textFieldAtIndex:0] text]];
+            [self.tableView reloadData];
+        }
+    }
+}
+
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        CGPoint p = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+        
+        if (indexPath == nil)
+        {
+            NSLog(@"long press on table view but not on a row");
+        }
+        else
+        {
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            if (cell.isHighlighted)
+            {
+                NSLog(@"long press on table view at section %d row %d", indexPath.section, indexPath.row);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Change List Name:" message:[@"Enter the new name of: " stringByAppendingString:[_model getListName:indexPath.row]] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Change", nil];
+                alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+                UITextField * alertTextField = [alert textFieldAtIndex:0];
+                alertTextField.keyboardType = UIKeyboardTypeDefault;
+                alertTextField.placeholder = @"Enter new name";
+                alert.tag = 2;
+                listIndexToChange = indexPath.row;
+                [alert show];
+                [alert release];
+            }
+        }
+    }
+}
+
 
 /*
 // Override to support rearranging the table view.

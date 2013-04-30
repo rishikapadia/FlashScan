@@ -23,8 +23,7 @@
 
 -(void)addListWithName:(NSString*)listName;
 -(void)addCardtoList:(UInt32)index
-           frontText:(NSString *)frontText frontImage:(UIImage *)frontImage
-            backText:(NSString *)backText backImage:(UIImage *)backImage;
+                card:(RKFlashCard *)card;
 
 -(void)removeListAtIndex:(UInt32)index;
 -(void)removeCardFromListIndex:(UInt32)listIndex cardIndex:(UInt32)cardIndex;
@@ -36,6 +35,7 @@
 
 -(void)sortListAtIndex:(UInt32)index;
 -(void)randomizeListAtIndex:(UInt32)index;
+-(NSMutableArray*)getCardListAtIndex:(UInt32)index;
 
 
 @end

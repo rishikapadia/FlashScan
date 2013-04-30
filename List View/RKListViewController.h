@@ -10,11 +10,12 @@
 #import "RKModel.h"
 #import "RKListSelectViewController.h"
 
-@interface RKListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RKListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
 {
 @private
     RKModel* _model;
-    UITableView* _tView;
+    //UITableView* _tView;
+    UInt32 listIndexToChange;
 }
 
 

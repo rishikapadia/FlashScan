@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RKModel.h"
 
-@interface RKCardViewController : UITableViewController
+@interface RKCardViewController : UITableViewController <UIAlertViewDelegate>
 {
 @private
     RKModel* _model;
     UInt32 _listIndex;
+    NSMutableArray* cards;
 }
 
 -(void)listIndex:(UInt32)index;

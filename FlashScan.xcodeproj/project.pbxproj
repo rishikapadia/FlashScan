@@ -44,6 +44,8 @@
 		77D1DABE172764E4005186B1 /* eng.unicharset in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654A172211D300501FC3 /* eng.unicharset */; };
 		77D1DABF172764E4005186B1 /* eng.user-words in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654B172211D300501FC3 /* eng.user-words */; };
 		77D1DAC0172764E4005186B1 /* eng.word-dawg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7702654C172211D300501FC3 /* eng.word-dawg */; };
+		77FE20EE172B910900F12DE8 /* abstract.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77FE20EC172B910900F12DE8 /* abstract.jpg */; };
+		77FE20EF172B910900F12DE8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77FE20ED172B910900F12DE8 /* background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +123,8 @@
 		7798F6E51728FD75008C48EE /* RKAddCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAddCardViewController.h; path = "Card View/RKAddCardViewController.h"; sourceTree = "<group>"; };
 		7798F6E61728FD75008C48EE /* RKAddCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAddCardViewController.m; path = "Card View/RKAddCardViewController.m"; sourceTree = "<group>"; };
 		7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKAddCardViewController.xib; path = "Card View/RKAddCardViewController.xib"; sourceTree = "<group>"; };
+		77FE20EC172B910900F12DE8 /* abstract.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abstract.jpg; path = Resources/abstract.jpg; sourceTree = "<group>"; };
+		77FE20ED172B910900F12DE8 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = Resources/background.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				7798F6E31728FC6A008C48EE /* flashcards.jpeg */,
+				77FE20EC172B910900F12DE8 /* abstract.jpg */,
+				77FE20ED172B910900F12DE8 /* background.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				773CE2341728F04800E84388 /* RKListSelectViewController.xib in Resources */,
 				7798F6E41728FC6A008C48EE /* flashcards.jpeg in Resources */,
 				7798F6E91728FD75008C48EE /* RKAddCardViewController.xib in Resources */,
+				77FE20EE172B910900F12DE8 /* abstract.jpg in Resources */,
+				77FE20EF172B910900F12DE8 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

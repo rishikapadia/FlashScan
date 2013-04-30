@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RKFlashCard : NSObject
+@interface RKFlashCard : NSObject <NSCoding>
 {
 @private
     NSString *_frontText;

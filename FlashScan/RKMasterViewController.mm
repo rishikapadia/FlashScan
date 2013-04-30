@@ -23,8 +23,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Menu", @"Menu");
+        self.title = NSLocalizedString(@"FlashScan", @"Menu");
         _model = [RKModel sharedModel];
+        [_model retain];
     }
     return self;
 }

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RKView.h"
 #import "RKModel.h"
 
 //@class RKDetailViewController;
@@ -15,7 +14,7 @@
 
 @interface RKMasterViewController : UIViewController <UIAlertViewDelegate>
 {
-    @private
+@private
     RKModel* _model;
 }
 
