@@ -78,9 +78,16 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [@"Card " stringByAppendingString:[NSString stringWithFormat:@"%u", indexPath.row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    if ([[cards objectAtIndex:indexPath.row] _frontText] != nil)
+    {
+        cell.textLabel.text = [[cards objectAtIndex:indexPath.row] _frontText];
+    }
+    else
+    {
+        cell.textLabel.text = [@"Card " stringByAppendingString:[NSString stringWithFormat:@"%u", indexPath.row]];
+    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
