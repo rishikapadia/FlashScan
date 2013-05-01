@@ -16,6 +16,7 @@
     RKModel* _model;
     //UITableView* _tView;
     UInt32 listIndexToChange;
+    NSIndexPath* toDelete;
 }
 
 

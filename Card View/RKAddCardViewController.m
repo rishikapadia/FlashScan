@@ -15,8 +15,8 @@
 @implementation RKAddCardViewController
 
 @synthesize front, back;
-@synthesize front1, front2, front3;
-@synthesize back1, back2, back3;
+@synthesize front1, front2, front3, front4;
+@synthesize back1, back2, back3, back4;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,32 +39,73 @@
     front1.hidden = YES;
     front2.hidden = YES;
     front3.hidden = YES;
+    front4.hidden = YES;
     
     back.hidden = NO;
     back1.hidden = NO;
     back2.hidden = NO;
     back3.hidden = NO;
+    back4.hidden = NO;
 }
 
 -(void)addFlashcard
 {
     [_model addCardtoList:_listIndex card:curr];
+    [curr release];
     
     //pop this view from stack
-    [[self navigationController] pushViewController:self animated:YES];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (IBAction)textFront:(id)sender
 {
-    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Creating New Card..." message:@"Please enter the text to be on the front:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeDefault;
+    alertTextField.placeholder = @"Enter front text";
+    alert.tag = 1;
+    [alert show];
+    [alert release];
     [self flipCardToBack];
 }
 
 - (IBAction)textBack:(id)sender
 {
-    
-    [self addFlashcard];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Creating New Card..." message:@"Please enter the text to be on the back:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeDefault;
+    alertTextField.placeholder = @"Enter back text";
+    alert.tag = 2;
+    [alert show];
+    [alert release];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+        return;
+
+    if (alertView.tag == 1)
+    {
+        if (buttonIndex == 1)
+        {
+            NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+            curr._frontText = [[alertView textFieldAtIndex:0] text];
+        }
+    }
+    else if (alertView.tag == 2)
+    {
+        if (buttonIndex == 1)
+        {
+            NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+            curr._backText = [[alertView textFieldAtIndex:0] text];
+            [self addFlashcard];
+        }
+    }
+}
+
 
 - (IBAction)addPicFront:(id)sender
 {
@@ -89,6 +130,20 @@
     
     [self addFlashcard];
 }
+
+- (IBAction)albumFront:(id)sender
+{
+    
+    [self flipCardToBack];
+}
+
+- (IBAction)albumBack:(id)sender
+{
+    
+    [self addFlashcard];
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -124,16 +179,23 @@
     //textField.text = text;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
+    [_model release];
+    
     [front release];
     [back release];
-    [_model release];
     [front1 release];
     [front2 release];
     [front3 release];
+    [front4 release];
     [back1 release];
     [back2 release];
     [back3 release];
+    [back4 release];
+    
+    [_frontPicker release];
+    [_backPicker release];
     [super dealloc];
 }
 @end

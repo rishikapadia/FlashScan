@@ -108,6 +108,9 @@
 {
     //NSLog(indexPath);
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [toDelete release];
+        toDelete = indexPath;
+        [toDelete retain];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning:" message:[[@"Are you sure you want to delete " stringByAppendingString:[_model getListName:indexPath.row]] stringByAppendingString:@"?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
         alert.tag = 1;
         [alert show];
@@ -124,12 +127,13 @@
 {
     if (alertView.tag == 1)
     {
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        //NSLog(path);
-        if (buttonIndex != [alertView cancelButtonIndex]) {
+//        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        if (buttonIndex != [alertView cancelButtonIndex])
+        {
             //delete from the data source
-            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:path] withRowAnimation:UITableViewRowAnimationFade];
-            [_model removeListAtIndex:path.row];
+            [_model removeListAtIndex:toDelete.row];
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:toDelete] withRowAnimation:UITableViewRowAnimationFade];
+            
         }
     }
     else if (alertView.tag == 2)
@@ -194,6 +198,19 @@
     return YES;
 }
 */
+
+- (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [toDelete release];
+    toDelete = indexPath;
+    [toDelete retain];
+}
+
+- (void)tableView:(UITableView*)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [toDelete release];
+}
+
 
 #pragma mark - Table view delegate
 

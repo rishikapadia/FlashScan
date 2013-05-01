@@ -27,6 +27,7 @@
 {
     _listIndex = index;
     cards = [_model getCardListAtIndex:_listIndex];
+    NSLog(@"%@%u%@", @"There are ", [cards count], @" elements in this list.");
 }
 
 - (void)viewDidLoad
@@ -91,6 +92,12 @@
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self listIndex:_listIndex];
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
