@@ -13,6 +13,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 @implementation RKOCRViewController
 
 @synthesize iv, textField;
+@synthesize camera, album, save;
 
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -48,10 +49,12 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 - (void)dealloc {
 	[iv release];
 	iv = nil;
-	//[label release];
-	//label = nil;
     [textField release];
     textField = nil;
+    
+    [camera release];
+    [album release];
+    [save release];
     [super dealloc];
 }
 
@@ -67,6 +70,27 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	//[self presentModalViewController:imagePickerController animated:YES];
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
+
+- (IBAction)saveText:(id)sender
+{
+    if (isFrontImage)
+    {
+        flashCard._frontText = textField.text;
+    }
+    else
+    {
+        flashCard._backText = textField.text;
+    }
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+//-(void)switchButtons
+//{
+//    camera.hidden = YES;
+//    album.hidden = YES;
+//    save.hidden = NO;
+//}
+
 - (IBAction) findPhoto:(id) sender
 {
 	imagePickerController = [[UIImagePickerController alloc] init];
@@ -209,13 +233,25 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	//show the image view with the picked image
 	
 	[picker dismissModalViewControllerAnimated:YES];
+    if (isFrontImage)
+    {
+        flashCard._frontImage = image;
+    } else {
+        flashCard._backImage = image;
+    }
 	UIImage *newImage = [self resizeImage:image];
 	iv.image = newImage;
 	NSString *text = [self ocrImage:newImage];
 	//label.text = text;
     textField.text = text;
     textField.hidden = NO;
-	
+	save.hidden = NO;
+}
+
+- (void)sendFlashcard:(RKFlashCard*)card isFrontImage:(BOOL)isFront
+{
+    flashCard = card;
+    isFrontImage = isFront;
 }
 
 @end

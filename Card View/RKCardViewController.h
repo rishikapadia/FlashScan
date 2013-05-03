@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RKModel.h"
+#import "RKNormalViewController.h"
 
 @interface RKCardViewController : UITableViewController <UIAlertViewDelegate>
 {

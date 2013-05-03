@@ -10,6 +10,7 @@
 #import "RKModel.h"
 #import "RKCardViewController.h"
 #import "RKAddCardViewController.h"
+#import "RKStudyViewController.h"
 
 @interface RKListSelectViewController : UIViewController
 {

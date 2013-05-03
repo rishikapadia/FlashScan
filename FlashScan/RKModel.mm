@@ -64,6 +64,7 @@ static RKModel* gSharedModel;
 
 -(void)addCard:(RKFlashCard*)card
 {
+    card.cardNumberInList = numberOfCards;
     [cards addObject:card];
     numberOfCards++;
 }

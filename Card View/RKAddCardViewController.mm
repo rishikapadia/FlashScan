@@ -109,36 +109,66 @@
 
 - (IBAction)addPicFront:(id)sender
 {
+    _frontPicker = [[UIImagePickerController alloc] init];
+    _frontPicker.delegate = self;
+    _frontPicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_frontPicker animated:YES completion:nil];
     
     [self flipCardToBack];
 }
 
 - (IBAction)addPicBack:(id)sender
 {
-    
-    [self addFlashcard];
-}
-
-- (IBAction)scanFront:(id)sender
-{
-    
-    [self flipCardToBack];
-}
-
-- (IBAction)scanBack:(id)sender
-{
+    _backPicker = [[UIImagePickerController alloc] init];
+    _backPicker.delegate = self;
+    _backPicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_backPicker animated:YES completion:nil];
     
     [self addFlashcard];
 }
 
 - (IBAction)albumFront:(id)sender
 {
+    _frontPicker = [[UIImagePickerController alloc] init];
+    _frontPicker.delegate = self;
+    _frontPicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_frontPicker animated:YES completion:nil];
     
     [self flipCardToBack];
 }
 
 - (IBAction)albumBack:(id)sender
 {
+    _backPicker = [[UIImagePickerController alloc] init];
+    _backPicker.delegate = self;
+    _backPicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_backPicker animated:YES completion:nil];
+    
+    [self addFlashcard];
+}
+
+- (IBAction)scanFront:(id)sender
+{
+    //push RKOCR
+    RKOCRViewController *ocr = [[RKOCRViewController alloc] initWithNibName:@"RKOCRViewController" bundle:nil];
+    
+    [[self navigationController] pushViewController:ocr animated:YES];
+    [ocr release];
+    [ocr sendFlashcard:curr isFrontImage:YES];
+    
+    [self flipCardToBack];
+}
+
+
+
+- (IBAction)scanBack:(id)sender
+{
+    //push RKOCR
+    RKOCRViewController *ocr = [[RKOCRViewController alloc] initWithNibName:@"RKOCRViewController" bundle:nil];
+    
+    [[self navigationController] pushViewController:ocr animated:YES];
+    [ocr release];
+    [ocr sendFlashcard:curr isFrontImage:NO];
     
     [self addFlashcard];
 }
@@ -164,19 +194,12 @@
 		didFinishPickingImage:(UIImage *)image
 				  editingInfo:(NSDictionary *)editingInfo
 {
-	
-	// Dismiss the image selection, hide the picker and
-	
-	//show the image view with the picked image
-	
 	[picker dismissModalViewControllerAnimated:YES];
-    curr._frontImage = image;
-    //curr._backImage = image;
     
-	//UIImage *newImage = [self resizeImage:image];
-	//iv.image = newImage;
-	//NSString *text = [self ocrImage:newImage];
-    //textField.text = text;
+    if (picker == _frontPicker)
+        curr._frontImage = image;
+    else if (picker == _backPicker)
+        curr._backImage = image;
 }
 
 - (void)dealloc
@@ -198,4 +221,5 @@
     [_backPicker release];
     [super dealloc];
 }
+
 @end

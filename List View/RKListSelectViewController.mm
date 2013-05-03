@@ -30,7 +30,10 @@
 
 - (IBAction)studyMode:(id)sender
 {
-    //
+    //push Study Mode, indicate if studying
+    RKStudyViewController* svc = [[RKStudyViewController alloc] initWithNibName:@"RKStudyViewController" bundle:nil];
+    [svc loadListIndex:_listIndex];
+    [[self navigationController] pushViewController:svc animated:YES];
 }
 
 - (IBAction)randomize:(id)sender

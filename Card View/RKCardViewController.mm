@@ -165,13 +165,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    
+    RKNormalViewController *nvc = [[RKNormalViewController alloc] initWithNibName:@"RKNormalViewController" bundle:nil];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:nvc animated:YES];
+    [nvc loadListIndex:_listIndex];
+    [nvc loadCardIndex:0];
+    [nvc release];
 }
 
 @end

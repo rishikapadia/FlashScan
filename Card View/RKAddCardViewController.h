@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RKModel.h"
 #import "RKFlashCard.h"
+#import "RKOCRViewController.h"
 
-@interface RKAddCardViewController : UIViewController <UIImagePickerControllerDelegate, UIAlertViewDelegate>
+@interface RKAddCardViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 {
 @private
     RKModel* _model;

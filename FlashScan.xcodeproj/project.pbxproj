@@ -26,14 +26,20 @@
 		7702655C17225B6C00501FC3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702655B17225B6C00501FC3 /* QuartzCore.framework */; };
 		7702655E17225B8C00501FC3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702655D17225B8C00501FC3 /* OpenGLES.framework */; };
 		7702656F1722646000501FC3 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702656E1722646000501FC3 /* libtesseract_full.a */; };
-		7708B8291727A5AA00570D1A /* RKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708B8271727A5AA00570D1A /* RKListViewController.m */; };
+		7708B8291727A5AA00570D1A /* RKListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7708B8271727A5AA00570D1A /* RKListViewController.mm */; };
 		7708B82A1727A5AA00570D1A /* RKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7708B8281727A5AA00570D1A /* RKListViewController.xib */; };
-		773CE22E1728A9BB00E84388 /* RKCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773CE22C1728A9BB00E84388 /* RKCardViewController.m */; };
+		773CE22E1728A9BB00E84388 /* RKCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 773CE22C1728A9BB00E84388 /* RKCardViewController.mm */; };
 		773CE22F1728A9BB00E84388 /* RKCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773CE22D1728A9BB00E84388 /* RKCardViewController.xib */; };
-		773CE2331728F04800E84388 /* RKListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773CE2311728F04800E84388 /* RKListSelectViewController.m */; };
+		773CE2331728F04800E84388 /* RKListSelectViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 773CE2311728F04800E84388 /* RKListSelectViewController.mm */; };
 		773CE2341728F04800E84388 /* RKListSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773CE2321728F04800E84388 /* RKListSelectViewController.xib */; };
+		777CC522173359B000964C14 /* RKStudyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 777CC520173359B000964C14 /* RKStudyViewController.mm */; };
+		777CC523173359B000964C14 /* RKStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777CC521173359B000964C14 /* RKStudyViewController.xib */; };
+		777CC527173373AE00964C14 /* RKNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 777CC525173373AE00964C14 /* RKNormalViewController.m */; };
+		777CC528173373AE00964C14 /* RKNormalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777CC526173373AE00964C14 /* RKNormalViewController.xib */; };
+		777CC52C1733853700964C14 /* RKContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 777CC52A1733853700964C14 /* RKContentViewController.m */; };
+		777CC52D1733853700964C14 /* RKContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777CC52B1733853700964C14 /* RKContentViewController.xib */; };
 		7798F6E41728FC6A008C48EE /* flashcards.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7798F6E31728FC6A008C48EE /* flashcards.jpeg */; };
-		7798F6E81728FD75008C48EE /* RKAddCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7798F6E61728FD75008C48EE /* RKAddCardViewController.m */; };
+		7798F6E81728FD75008C48EE /* RKAddCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7798F6E61728FD75008C48EE /* RKAddCardViewController.mm */; };
 		7798F6E91728FD75008C48EE /* RKAddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */; };
 		77ABDB6B17308C2700E60966 /* RKOCRViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 77ABDB6917308C2700E60966 /* RKOCRViewController.mm */; };
 		77ABDB6C17308C2700E60966 /* RKOCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77ABDB6A17308C2700E60966 /* RKOCRViewController.xib */; };
@@ -110,17 +116,26 @@
 		7702655D17225B8C00501FC3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7702656E1722646000501FC3 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtesseract_full.a; path = Resources/libtesseract_full.a; sourceTree = "<group>"; };
 		7708B8261727A5AA00570D1A /* RKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKListViewController.h; path = "List View/RKListViewController.h"; sourceTree = "<group>"; };
-		7708B8271727A5AA00570D1A /* RKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKListViewController.m; path = "List View/RKListViewController.m"; sourceTree = "<group>"; };
+		7708B8271727A5AA00570D1A /* RKListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKListViewController.mm; path = "List View/RKListViewController.mm"; sourceTree = "<group>"; };
 		7708B8281727A5AA00570D1A /* RKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKListViewController.xib; path = "List View/RKListViewController.xib"; sourceTree = "<group>"; };
 		773CE22B1728A9BB00E84388 /* RKCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKCardViewController.h; path = "Card View/RKCardViewController.h"; sourceTree = "<group>"; };
-		773CE22C1728A9BB00E84388 /* RKCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKCardViewController.m; path = "Card View/RKCardViewController.m"; sourceTree = "<group>"; };
+		773CE22C1728A9BB00E84388 /* RKCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKCardViewController.mm; path = "Card View/RKCardViewController.mm"; sourceTree = "<group>"; };
 		773CE22D1728A9BB00E84388 /* RKCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKCardViewController.xib; path = "Card View/RKCardViewController.xib"; sourceTree = "<group>"; };
 		773CE2301728F04800E84388 /* RKListSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKListSelectViewController.h; path = "List View/RKListSelectViewController.h"; sourceTree = "<group>"; };
-		773CE2311728F04800E84388 /* RKListSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKListSelectViewController.m; path = "List View/RKListSelectViewController.m"; sourceTree = "<group>"; };
+		773CE2311728F04800E84388 /* RKListSelectViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKListSelectViewController.mm; path = "List View/RKListSelectViewController.mm"; sourceTree = "<group>"; };
 		773CE2321728F04800E84388 /* RKListSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKListSelectViewController.xib; path = "List View/RKListSelectViewController.xib"; sourceTree = "<group>"; };
+		777CC51F173359B000964C14 /* RKStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKStudyViewController.h; path = Study/RKStudyViewController.h; sourceTree = "<group>"; };
+		777CC520173359B000964C14 /* RKStudyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKStudyViewController.mm; path = Study/RKStudyViewController.mm; sourceTree = "<group>"; };
+		777CC521173359B000964C14 /* RKStudyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKStudyViewController.xib; path = Study/RKStudyViewController.xib; sourceTree = "<group>"; };
+		777CC524173373AE00964C14 /* RKNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKNormalViewController.h; path = Study/RKNormalViewController.h; sourceTree = "<group>"; };
+		777CC525173373AE00964C14 /* RKNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKNormalViewController.m; path = Study/RKNormalViewController.m; sourceTree = "<group>"; };
+		777CC526173373AE00964C14 /* RKNormalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKNormalViewController.xib; path = Study/RKNormalViewController.xib; sourceTree = "<group>"; };
+		777CC5291733853700964C14 /* RKContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKContentViewController.h; path = Study/RKContentViewController.h; sourceTree = "<group>"; };
+		777CC52A1733853700964C14 /* RKContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKContentViewController.m; path = Study/RKContentViewController.m; sourceTree = "<group>"; };
+		777CC52B1733853700964C14 /* RKContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKContentViewController.xib; path = Study/RKContentViewController.xib; sourceTree = "<group>"; };
 		7798F6E31728FC6A008C48EE /* flashcards.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = flashcards.jpeg; path = Resources/flashcards.jpeg; sourceTree = "<group>"; };
 		7798F6E51728FD75008C48EE /* RKAddCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAddCardViewController.h; path = "Card View/RKAddCardViewController.h"; sourceTree = "<group>"; };
-		7798F6E61728FD75008C48EE /* RKAddCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAddCardViewController.m; path = "Card View/RKAddCardViewController.m"; sourceTree = "<group>"; };
+		7798F6E61728FD75008C48EE /* RKAddCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKAddCardViewController.mm; path = "Card View/RKAddCardViewController.mm"; sourceTree = "<group>"; };
 		7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKAddCardViewController.xib; path = "Card View/RKAddCardViewController.xib"; sourceTree = "<group>"; };
 		77ABDB6817308C2700E60966 /* RKOCRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKOCRViewController.h; sourceTree = "<group>"; };
 		77ABDB6917308C2700E60966 /* RKOCRViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RKOCRViewController.mm; sourceTree = "<group>"; };
@@ -152,6 +167,7 @@
 				77026539172211D300501FC3 /* OCR */,
 				7702650E17220EB000501FC3 /* Resources */,
 				770264CA1722067200501FC3 /* FlashScan - Main */,
+				777CC5191732F41F00964C14 /* Study */,
 				773CE22A1728A88000E84388 /* Card View */,
 				7702650F17220F3200501FC3 /* List View */,
 				770264C31722067200501FC3 /* Frameworks */,
@@ -230,10 +246,10 @@
 			isa = PBXGroup;
 			children = (
 				7708B8261727A5AA00570D1A /* RKListViewController.h */,
-				7708B8271727A5AA00570D1A /* RKListViewController.m */,
+				7708B8271727A5AA00570D1A /* RKListViewController.mm */,
 				7708B8281727A5AA00570D1A /* RKListViewController.xib */,
 				773CE2301728F04800E84388 /* RKListSelectViewController.h */,
-				773CE2311728F04800E84388 /* RKListSelectViewController.m */,
+				773CE2311728F04800E84388 /* RKListSelectViewController.mm */,
 				773CE2321728F04800E84388 /* RKListSelectViewController.xib */,
 			);
 			name = "List View";
@@ -273,13 +289,29 @@
 			isa = PBXGroup;
 			children = (
 				773CE22B1728A9BB00E84388 /* RKCardViewController.h */,
-				773CE22C1728A9BB00E84388 /* RKCardViewController.m */,
+				773CE22C1728A9BB00E84388 /* RKCardViewController.mm */,
 				773CE22D1728A9BB00E84388 /* RKCardViewController.xib */,
 				7798F6E51728FD75008C48EE /* RKAddCardViewController.h */,
-				7798F6E61728FD75008C48EE /* RKAddCardViewController.m */,
+				7798F6E61728FD75008C48EE /* RKAddCardViewController.mm */,
 				7798F6E71728FD75008C48EE /* RKAddCardViewController.xib */,
 			);
 			name = "Card View";
+			sourceTree = "<group>";
+		};
+		777CC5191732F41F00964C14 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				777CC51F173359B000964C14 /* RKStudyViewController.h */,
+				777CC520173359B000964C14 /* RKStudyViewController.mm */,
+				777CC521173359B000964C14 /* RKStudyViewController.xib */,
+				777CC524173373AE00964C14 /* RKNormalViewController.h */,
+				777CC525173373AE00964C14 /* RKNormalViewController.m */,
+				777CC526173373AE00964C14 /* RKNormalViewController.xib */,
+				777CC5291733853700964C14 /* RKContentViewController.h */,
+				777CC52A1733853700964C14 /* RKContentViewController.m */,
+				777CC52B1733853700964C14 /* RKContentViewController.xib */,
+			);
+			name = Study;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +382,9 @@
 				77FE20EE172B910900F12DE8 /* abstract.jpg in Resources */,
 				77FE20EF172B910900F12DE8 /* background.jpg in Resources */,
 				77ABDB6C17308C2700E60966 /* RKOCRViewController.xib in Resources */,
+				777CC523173359B000964C14 /* RKStudyViewController.xib in Resources */,
+				777CC528173373AE00964C14 /* RKNormalViewController.xib in Resources */,
+				777CC52D1733853700964C14 /* RKContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,11 +401,14 @@
 				7702650717220B1900501FC3 /* RKFlashCard.mm in Sources */,
 				7702650D17220B5A00501FC3 /* RKModel.mm in Sources */,
 				77026551172211D300501FC3 /* OCRViewController.mm in Sources */,
-				7708B8291727A5AA00570D1A /* RKListViewController.m in Sources */,
-				773CE22E1728A9BB00E84388 /* RKCardViewController.m in Sources */,
-				773CE2331728F04800E84388 /* RKListSelectViewController.m in Sources */,
-				7798F6E81728FD75008C48EE /* RKAddCardViewController.m in Sources */,
+				7708B8291727A5AA00570D1A /* RKListViewController.mm in Sources */,
+				773CE22E1728A9BB00E84388 /* RKCardViewController.mm in Sources */,
+				773CE2331728F04800E84388 /* RKListSelectViewController.mm in Sources */,
+				7798F6E81728FD75008C48EE /* RKAddCardViewController.mm in Sources */,
 				77ABDB6B17308C2700E60966 /* RKOCRViewController.mm in Sources */,
+				777CC522173359B000964C14 /* RKStudyViewController.mm in Sources */,
+				777CC527173373AE00964C14 /* RKNormalViewController.m in Sources */,
+				777CC52C1733853700964C14 /* RKContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
