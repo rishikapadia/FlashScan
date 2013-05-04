@@ -119,7 +119,8 @@
         [toDelete release];
         toDelete = indexPath;
         [toDelete retain];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning:" message:[[@"Are you sure you want to delete Card " stringByAppendingString:[NSString stringWithFormat:@"%u", indexPath.row]] stringByAppendingString:@"?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
+        NSString* cardNumber = [NSString stringWithFormat:@"%u", (unsigned int)((RKFlashCard*)[cards objectAtIndex:indexPath.row]).cardNumberInList];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning:" message:[[@"Are you sure you want to delete Card " stringByAppendingString:cardNumber] stringByAppendingString:@"?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
         toDelete = indexPath;
         alert.tag = 1;
         [alert show];
