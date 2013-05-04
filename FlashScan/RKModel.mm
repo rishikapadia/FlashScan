@@ -64,9 +64,9 @@ static RKModel* gSharedModel;
 
 -(void)addCard:(RKFlashCard*)card
 {
+    numberOfCards++;
     card.cardNumberInList = numberOfCards;
     [cards addObject:card];
-    numberOfCards++;
 }
 
 -(void)randomize
@@ -80,19 +80,28 @@ static RKModel* gSharedModel;
 
 -(void)sort
 {
+//    [cards sortedArrayUsingComparator:^NSComparisonResult(id a, id b)
+//    {
+//        RKFlashCard* first = (RKFlashCard*) a;
+//        RKFlashCard* second = (RKFlashCard*) b;
+//        if (first.cardNumberInList < second.cardNumberInList)
+//            return NSOrderedAscending;
+//        if (first.cardNumberInList == second.cardNumberInList)
+//            return NSOrderedSame;
+//        return NSOrderedDescending;
+//    }];
+//    [cards sortUsingSelector:@selector(comp:)];
+    
     [cards sortUsingSelector:@selector(compareWithElem:)];
 }
 
--(NSInteger)compareWithElem:(NSObject*)elem
+-(NSInteger)comp:(NSObject*)elem
 {
-    RKFlashCard* first = (RKFlashCard*) self;
-    RKFlashCard* second = (RKFlashCard*) elem;
-    if (first.cardNumberInList < second.cardNumberInList)
-        return NSOrderedAscending;
-    if (first.cardNumberInList == second.cardNumberInList)
-        return NSOrderedSame;
-    return NSOrderedDescending;
+    NSLog(@"logged selector");
+    return NSOrderedSame;
 }
+
+
 
 -(void)changeName:(NSString*)newName
 {

@@ -43,20 +43,24 @@
         imageView.image = image;
         //fill imageview to entire bounds
         [imageView setFrame:[[self view] bounds]];
+        [[self view] addSubview:imageView];
     }
     else if (image == nil)
     {
         label.text = text;
         label.textAlignment = NSTextAlignmentCenter;
         //fill text to entire bounds, and center
-        [imageView setFrame:[[self view] bounds]];
+        [label setFrame:[[self view] bounds]];
+        [[self view] addSubview:label];
     }
     else
     {
         label.text = text;
         [label setFrame:CGRectMake((CGFloat)20, (CGFloat)20, (CGFloat)280, (CGFloat)120)];
         imageView.image = image;
-        [label setFrame:CGRectMake((CGFloat)0, (CGFloat)148, (CGFloat)320, (CGFloat)400)];
+        [imageView setFrame:CGRectMake((CGFloat)0, (CGFloat)148, (CGFloat)320, (CGFloat)400)];
+        [[self view] addSubview:imageView];
+        [[self view] addSubview:label];
     }
 }
 

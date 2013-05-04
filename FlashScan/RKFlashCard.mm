@@ -16,6 +16,18 @@
 @synthesize _backImage;
 @synthesize cardNumberInList;
 
+-(NSInteger)compareWithElem:(NSObject*)elem
+{
+    RKFlashCard* first = (RKFlashCard*) self;
+    RKFlashCard* second = (RKFlashCard*) elem;
+    NSLog(@"%u%u", (unsigned int)first.cardNumberInList, (unsigned int)second.cardNumberInList);
+    if (first.cardNumberInList < second.cardNumberInList)
+        return NSOrderedAscending;
+    if (first.cardNumberInList == second.cardNumberInList)
+        return NSOrderedSame;
+    return NSOrderedDescending;
+}
+
 -(void) dealloc
 {
     [_frontText release];

@@ -24,4 +24,6 @@
 @property (nonatomic, retain) UIImage *_backImage;
 @property (nonatomic) UInt32 cardNumberInList;
 
+-(NSInteger)compareWithElem:(NSObject*)elem;
+
 @end

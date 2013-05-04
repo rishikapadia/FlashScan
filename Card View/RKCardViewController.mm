@@ -38,7 +38,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _model = [RKModel sharedModel];
     [_model retain];
 }
@@ -116,12 +116,16 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
+        [toDelete release];
+        toDelete = indexPath;
+        [toDelete retain];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning:" message:[[@"Are you sure you want to delete Card " stringByAppendingString:[NSString stringWithFormat:@"%u", indexPath.row]] stringByAppendingString:@"?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
+        toDelete = indexPath;
         alert.tag = 1;
         [alert show];
         [alert release];
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -133,12 +137,13 @@
 {
     if (alertView.tag == 1)
     {
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        //NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         //NSLog(path);
-        if (buttonIndex != [alertView cancelButtonIndex]) {
+        if (buttonIndex != [alertView cancelButtonIndex])
+        {
             //delete from the data source
-            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:path] withRowAnimation:UITableViewRowAnimationFade];
-            [_model removeCardFromListIndex:_listIndex cardIndex:path.row];
+            [_model removeCardFromListIndex:_listIndex cardIndex:toDelete.row];
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:toDelete] withRowAnimation:UITableViewRowAnimationFade];
         }
     }
 }
@@ -169,10 +174,22 @@
     RKNormalViewController *nvc = [[RKNormalViewController alloc] initWithNibName:@"RKNormalViewController" bundle:nil];
     // ...
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:nvc animated:YES];
     [nvc loadListIndex:_listIndex];
-    [nvc loadCardIndex:0];
+    [nvc loadCardIndex:indexPath.row];
+    [self.navigationController pushViewController:nvc animated:YES];
     [nvc release];
+}
+
+- (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [toDelete release];
+    toDelete = indexPath;
+    [toDelete retain];
+}
+
+- (void)tableView:(UITableView*)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [toDelete release];
 }
 
 @end

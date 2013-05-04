@@ -1,18 +1,18 @@
 //
-//  RKStudyViewController.m
+//  RKNormalViewController.m
 //  FlashScan
 //
 //  Created by Rishi Kapadia on 5/2/13.
 //  Copyright (c) 2013 Rishi Kapadia. All rights reserved.
 //
 
-#import "RKStudyViewController.h"
+#import "RKNormalViewController.h"
 
-@interface RKStudyViewController ()
+@interface RKNormalViewController ()
 
 @end
 
-@implementation RKStudyViewController
+@implementation RKNormalViewController
 
 @synthesize frontPageContent, backPageContent, pageController;
 
@@ -28,6 +28,25 @@
         }
     }
     return self;
+}
+
+-(void)loadListIndex:(UInt32)listIndex
+{
+    if (_model == nil)
+    {
+        _model = [RKModel sharedModel];
+        [_model retain];
+    }
+    listNumber = listIndex;
+    cards = [_model getCardListAtIndex:listIndex];
+    cardNumber = 0;
+}
+
+-(void)loadCardIndex:(UInt32)cardIndex
+{
+    if ((signed int)cardIndex < 0 || cardIndex >= [cards count])
+        return;
+    cardNumber = cardIndex;
 }
 
 - (void) createContentPages
@@ -71,50 +90,13 @@
     }
 }
 
-- (NSUInteger)indexOfViewController:(RKContentViewController *)viewController
+-(NSUInteger)indexOfViewController:(RKContentViewController*)viewController
 {
     if (viewController.isFront)
         return [frontPageContent indexOfObject:viewController];
     else
         return [backPageContent indexOfObject:viewController];
 }
-
-
-//- (UIViewController*)pageViewController:(UIPageViewController*)pageViewController viewControllerBeforeViewController:(UIViewController*)viewController
-//{
-//    NSLog(@"%@", @"Before VC called");
-//    if (cardNumber == 0)
-//    {
-//        return nil;
-//    }
-//    
-//    cardNumber--;
-//    return [self viewControllerAtIndex:cardNumber isFront:YES];
-//}
-//
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController*)viewController
-//{
-//    NSLog(@"%@", @"After VC called");
-//    if (cardNumber == [cards count] - 1)
-//    {
-//        return nil;
-//    }
-//    cardNumber++;
-//    return [self viewControllerAtIndex:cardNumber isFront:YES];
-//}
-
--(void)loadListIndex:(UInt32)listIndex
-{
-    if (_model == nil)
-    {
-        _model = [RKModel sharedModel];
-        [_model retain];
-    }
-    listNumber = listIndex;
-    cards = [_model getCardListAtIndex:listIndex];
-    cardNumber = 0;
-}
-
 
 - (void)viewDidLoad
 {
@@ -128,11 +110,11 @@
     
     [self createContentPages];
     NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:UIPageViewControllerSpineLocationMin]
-        forKey: UIPageViewControllerOptionSpineLocationKey];
+                                                        forKey: UIPageViewControllerOptionSpineLocationKey];
     
     self.pageController = [[UIPageViewController alloc]
-        initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-            navigationOrientation:UIPageViewControllerNavigationOrientationVertical
+                           initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                           navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
                            options: options];
     
     //pageController.dataSource = self;
@@ -148,40 +130,31 @@
     [pageController didMoveToParentViewController:self];
     
     
+
     
-    
-    
-    UISwipeGestureRecognizer* swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
-    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    [self.view addGestureRecognizer:swipeUp];
-    
-    UISwipeGestureRecognizer* swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownFrom:)];
-    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:swipeDown];
-    
-    UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    singleTapRecognizer.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:singleTapRecognizer];
-    
-    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-    doubleTapRecognizer.numberOfTouchesRequired = 2;
-    [self.view addGestureRecognizer:doubleTapRecognizer];
-    
-//    gestures = [NSArray arrayWithObjects:swipeUp, swipeDown, singleTapRecognizer, doubleTapRecognizer, nil];
-//    
-//    for (int x = 0; x < gestures.count; x++)
-//    {
-//        [[self view] addGestureRecognizer:gestures[x]];
-//    }
+     UISwipeGestureRecognizer* swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightFrom:)];
+     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+     [self.view addGestureRecognizer:swipeRight];
+     
+     UISwipeGestureRecognizer* swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftFrom:)];
+     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+     [self.view addGestureRecognizer:swipeLeft];
+     
+     UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+     singleTapRecognizer.numberOfTapsRequired = 1;
+     [self.view addGestureRecognizer:singleTapRecognizer];
+     
+     UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+     doubleTapRecognizer.numberOfTouchesRequired = 2;
+     [self.view addGestureRecognizer:doubleTapRecognizer];
 }
 
-
--(void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer
+-(void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer
 {
     //mark card as understood
     
     //go to next card, or previous if on last card
-    NSLog(@"%@", @"Swipe Up called");
+    NSLog(@"%@", @"Swipe Left called");
     if (cardNumber == [cards count] - 1)
     {
         return;
@@ -192,13 +165,13 @@
     
     [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
- 
--(void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer
+
+-(void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer
 {
     //mark card as mistake
     
     //go to next card, or previous if on last card
-    NSLog(@"%@", @"Swipe Down called");
+    NSLog(@"%@", @"Swipe Right called");
     if (cardNumber == 0)
     {
         return;
@@ -208,7 +181,70 @@
     [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
 }
 
+
+/*
+ - (void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer
+ {
+ if (cardNumber == 0)
+ return;
+ if (next == nil)
+ {
+ next = [[RKStudyViewController alloc] init];
+ [next setNext:self];
+ [next loadListIndex:listNumber];
+ }
  
+ [[self navigationController] pushViewController:next animated:YES];
+ [next loadCardIndex:cardNumber-1];
+ [[self navigationController] popViewControllerAnimated:NO];
+ }
+ 
+ - (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer
+ {
+ if ((signed int)cardNumber >= [cards count])
+ return;
+ //if (next == nil)
+ {
+ next = [[RKStudyViewController alloc] init];
+ //[next setNext:self];
+ [next loadListIndex:listNumber];
+ }
+ 
+ [[self navigationController] pushViewController:next animated:YES];
+ [next loadCardIndex:cardNumber+1];
+ //[[self navigationController] popViewControllerAnimated:NO];
+ }
+ 
+ - (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer
+ {
+ //mark card as mistake
+ //go to next card, or previous if on last card
+ }
+ 
+ 
+ //single tap: switch to back
+ //double-tap: hide nav bar from both self and next
+ 
+ 
+ - (void)handleSingleTap:(UITapGestureRecognizer *)sender
+ {
+ if (sender.state == UIGestureRecognizerStateEnded)
+ {
+ //switch to back of card
+ }
+ }
+ 
+ - (void)handleDoubleTap:(UITapGestureRecognizer *)sender
+ {
+ if (sender.state == UIGestureRecognizerStateEnded)
+ {
+ UINavigationBar* bar = self.navigationController.navigationBar;
+ bar.hidden = !bar.hidden;
+ }
+ }
+ */
+
+
 //single tap: switch to back
 //double-tap: hide nav bar from both self and next
 
@@ -221,7 +257,7 @@
         [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     }
 }
- 
+
 -(void)handleDoubleTap:(UITapGestureRecognizer *)sender
 {
     if (sender.state == UIGestureRecognizerStateEnded)

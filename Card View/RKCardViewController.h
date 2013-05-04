@@ -10,12 +10,13 @@
 #import "RKModel.h"
 #import "RKNormalViewController.h"
 
-@interface RKCardViewController : UITableViewController <UIAlertViewDelegate>
+@interface RKCardViewController : UITableViewController <UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
 @private
     RKModel* _model;
     UInt32 _listIndex;
     NSMutableArray* cards;
+    NSIndexPath* toDelete;
 }
 
 -(void)listIndex:(UInt32)index;

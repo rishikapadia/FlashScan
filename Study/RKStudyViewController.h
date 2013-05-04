@@ -11,7 +11,7 @@
 #import "RKFlashCard.h"
 #import "RKContentViewController.h"
 
-@interface RKStudyViewController : UIViewController <UIPageViewControllerDataSource, UIGestureRecognizerDelegate>
+@interface RKStudyViewController : UIViewController <UIGestureRecognizerDelegate>
 {
 @private
     RKModel* _model;
@@ -19,11 +19,11 @@
     UInt32 listNumber;
     UInt32 cardNumber;
     
-    NSArray* gestures;
-    
     UIPageViewController *pageController;
     NSArray *frontPageContent;
     NSArray *backPageContent;
+    BOOL currIsFront;
+    
     //~5 buckets
 }
 

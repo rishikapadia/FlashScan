@@ -9,22 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "RKModel.h"
 #import "RKFlashCard.h"
+#import "RKContentViewController.h"
 
-@interface RKNormalViewController : UIPageViewController
+@interface RKNormalViewController : UIPageViewController <UIGestureRecognizerDelegate>
 {
 @private
-    UIImageView* imageView;
-    UILabel* label;
     RKModel* _model;
-    
     NSMutableArray* cards;
     UInt32 listNumber;
     UInt32 cardNumber;
-    RKNormalViewController* next;
+    
+    UIPageViewController *pageController;
+    NSArray *frontPageContent;
+    NSArray *backPageContent;
+    BOOL currIsFront;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView *imageView;
-@property (retain, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) UIPageViewController *pageController;
+@property (strong, nonatomic) NSArray *frontPageContent;
+@property (strong, nonatomic) NSArray *backPageContent;
 
 -(void)loadListIndex:(UInt32)listIndex;
 -(void)loadCardIndex:(UInt32)cardIndex;
