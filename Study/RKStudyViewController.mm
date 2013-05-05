@@ -32,8 +32,12 @@
 
 - (void) createContentPages
 {
-    NSMutableArray *fronts = [[NSMutableArray alloc] init];
-    NSMutableArray *backs = [[NSMutableArray alloc] init];
+    buckets = [NSArray arrayWithObjects:[[NSMutableArray alloc]init],
+               [[NSMutableArray alloc]init],
+               [[NSMutableArray alloc]init],
+               [[NSMutableArray alloc]init], nil];
+//    NSMutableArray *fronts = [[NSMutableArray alloc] init];
+//    NSMutableArray *backs = [[NSMutableArray alloc] init];
     for (int i = 0; i < [cards count]; i++)
     {
         RKContentViewController* tempFront = [[RKContentViewController alloc] initWithNibName:@"RKContentViewController" bundle:nil];
@@ -43,11 +47,25 @@
         RKFlashCard* card = [cards objectAtIndex:i];
         [tempFront setLabelText:[card _frontText] image:[card _frontImage]];
         [tempBack setLabelText:[card _backText] image:[card _backImage]];
-        [fronts addObject:tempFront];
-        [backs addObject:tempBack];
+//        [fronts addObject:tempFront];
+//        [backs addObject:tempBack];
+        
+        [buckets[i % 4] addObject:[NSArray arrayWithObjects:tempFront, tempBack, nil]];
     }
-    frontPageContent = [[NSArray alloc] initWithArray:fronts];
-    backPageContent = [[NSArray alloc] initWithArray:backs];
+//    frontPageContent = [[NSArray alloc] initWithArray:fronts];
+//    backPageContent = [[NSArray alloc] initWithArray:backs];
+    
+    
+
+//    for (int i = 0; i < [cards count]; i++)
+//    {
+//        [buckets[i % 4] addObject:(NSString*)i];
+//        [buckets[i % 4] addObject:(NSString*)((RKFlashCard*)cards[i]).cardNumberInList];
+//    }
+    
+    currBucket = 0;
+    currBucketNumber = 0;
+    currBucketIndex = 0;
 }
 
 - (RKContentViewController*)viewControllerAtIndex:(NSUInteger)index isFront:(BOOL)isFront
@@ -178,10 +196,15 @@
 
 -(void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer
 {
+    NSLog(@"%@", @"Swipe Up called");
     //mark card as understood
+    if (currBucket < buckets.count - 1)
+    {
+        
+    }
+    
     
     //go to next card, or previous if on last card
-    NSLog(@"%@", @"Swipe Up called");
     if (cardNumber == [cards count] - 1)
     {
         return;

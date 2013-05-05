@@ -25,6 +25,11 @@
     BOOL currIsFront;
     
     //~5 buckets
+    NSArray* buckets;
+    NSArray* nextBuckets;
+    UInt32 currBucket;
+    UInt32 currBucketNumber;
+    UInt32 currBucketIndex;
 }
 
 @property (strong, nonatomic) UIPageViewController *pageController;
