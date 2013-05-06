@@ -37,7 +37,9 @@
                [[NSMutableArray alloc]init],
                [[NSMutableArray alloc]init], nil];
     nextBuckets = [NSArray arrayWithObjects:[[NSMutableArray alloc]init], [[NSMutableArray alloc]init], [[NSMutableArray alloc]init], [[NSMutableArray alloc]init], nil];
-
+    [buckets retain];
+    [nextBuckets retain];
+    
     for (int i = 0; i < [cards count]; i++)
     {
         RKContentViewController* tempFront = [[RKContentViewController alloc] initWithNibName:@"RKContentViewController" bundle:nil];
@@ -160,6 +162,7 @@
             {
                 nextBuckets[i][j] = buckets[i][j];
             }
+            [buckets[i] removeAllObjects];
         }
         
         if (currIterationNumber == [buckets count] - 1)
