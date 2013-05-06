@@ -14,7 +14,7 @@
 
 @implementation RKStudyViewController
 
-@synthesize frontPageContent, backPageContent, pageController;
+@synthesize pageController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,8 +36,8 @@
                [[NSMutableArray alloc]init],
                [[NSMutableArray alloc]init],
                [[NSMutableArray alloc]init], nil];
-//    NSMutableArray *fronts = [[NSMutableArray alloc] init];
-//    NSMutableArray *backs = [[NSMutableArray alloc] init];
+    nextBuckets = [NSArray arrayWithObjects:[[NSMutableArray alloc]init], [[NSMutableArray alloc]init], [[NSMutableArray alloc]init], [[NSMutableArray alloc]init], nil];
+
     for (int i = 0; i < [cards count]; i++)
     {
         RKContentViewController* tempFront = [[RKContentViewController alloc] initWithNibName:@"RKContentViewController" bundle:nil];
@@ -47,79 +47,14 @@
         RKFlashCard* card = [cards objectAtIndex:i];
         [tempFront setLabelText:[card _frontText] image:[card _frontImage]];
         [tempBack setLabelText:[card _backText] image:[card _backImage]];
-//        [fronts addObject:tempFront];
-//        [backs addObject:tempBack];
         
         [buckets[i % 4] addObject:[NSArray arrayWithObjects:tempFront, tempBack, nil]];
     }
-//    frontPageContent = [[NSArray alloc] initWithArray:fronts];
-//    backPageContent = [[NSArray alloc] initWithArray:backs];
-    
-    
-
-//    for (int i = 0; i < [cards count]; i++)
-//    {
-//        [buckets[i % 4] addObject:(NSString*)i];
-//        [buckets[i % 4] addObject:(NSString*)((RKFlashCard*)cards[i]).cardNumberInList];
-//    }
     
     currBucket = 0;
-    currBucketNumber = 0;
+    currIterationNumber = 0;
     currBucketIndex = 0;
 }
-
-- (RKContentViewController*)viewControllerAtIndex:(NSUInteger)index isFront:(BOOL)isFront
-{
-    // Return the data view controller for the given index.
-    if (([self.frontPageContent count] == 0) || (index >= [self.frontPageContent count]))
-    {
-        return nil;
-    }
-    
-    // Create a new view controller and pass suitable data.
-    if (isFront)
-    {
-        currIsFront = YES;
-        return [frontPageContent objectAtIndex:index];
-    }
-    else
-    {
-        currIsFront = NO;
-        return [backPageContent objectAtIndex:index];
-    }
-}
-
-- (NSUInteger)indexOfViewController:(RKContentViewController *)viewController
-{
-    if (viewController.isFront)
-        return [frontPageContent indexOfObject:viewController];
-    else
-        return [backPageContent indexOfObject:viewController];
-}
-
-
-//- (UIViewController*)pageViewController:(UIPageViewController*)pageViewController viewControllerBeforeViewController:(UIViewController*)viewController
-//{
-//    NSLog(@"%@", @"Before VC called");
-//    if (cardNumber == 0)
-//    {
-//        return nil;
-//    }
-//    
-//    cardNumber--;
-//    return [self viewControllerAtIndex:cardNumber isFront:YES];
-//}
-//
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController*)viewController
-//{
-//    NSLog(@"%@", @"After VC called");
-//    if (cardNumber == [cards count] - 1)
-//    {
-//        return nil;
-//    }
-//    cardNumber++;
-//    return [self viewControllerAtIndex:cardNumber isFront:YES];
-//}
 
 -(void)loadListIndex:(UInt32)listIndex
 {
@@ -130,7 +65,6 @@
     }
     listNumber = listIndex;
     cards = [_model getCardListAtIndex:listIndex];
-    cardNumber = 0;
 }
 
 
@@ -153,10 +87,11 @@
             navigationOrientation:UIPageViewControllerNavigationOrientationVertical
                            options: options];
     
-    //pageController.dataSource = self;
     [[pageController view] setFrame:[[self view] bounds]];
     
-    RKContentViewController *initialViewController = [self viewControllerAtIndex:cardNumber isFront:YES];
+    currController = buckets[0][0];
+    currIsFront = YES;
+    RKContentViewController* initialViewController = currController[0];  //first front controller
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
     [pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -184,13 +119,6 @@
     UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     doubleTapRecognizer.numberOfTouchesRequired = 2;
     [self.view addGestureRecognizer:doubleTapRecognizer];
-    
-//    gestures = [NSArray arrayWithObjects:swipeUp, swipeDown, singleTapRecognizer, doubleTapRecognizer, nil];
-//    
-//    for (int x = 0; x < gestures.count; x++)
-//    {
-//        [[self view] addGestureRecognizer:gestures[x]];
-//    }
 }
 
 
@@ -198,40 +126,97 @@
 {
     NSLog(@"%@", @"Swipe Up called");
     //mark card as understood
-    if (currBucket < buckets.count - 1)
+    if (currBucket < [buckets count] - 1)
     {
-        
+        //put currController in the next bucket
+        [nextBuckets[currBucket + 1] addObject:currController];
     }
     
-    
-    //go to next card, or previous if on last card
-    if (cardNumber == [cards count] - 1)
-    {
-        return;
-    }
-    cardNumber++;
-    RKContentViewController* nextVC = [self viewControllerAtIndex:cardNumber isFront:YES];
-    
-    
-    [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self displayNextCard:YES];
 }
  
 -(void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer
 {
-    //mark card as mistake
-    
-    //go to next card, or previous if on last card
     NSLog(@"%@", @"Swipe Down called");
-    if (cardNumber == 0)
+    //mark card as mistake
+    if (currBucket > 0)
     {
-        return;
+        //put currController in the previous bucket
+        [nextBuckets[currBucket - 1] addObject:currController];
     }
-    cardNumber--;
-    RKContentViewController* nextVC = [self viewControllerAtIndex:cardNumber isFront:YES];
-    [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    
+    [self displayNextCard:NO];
 }
 
- 
+-(void)displayNextCard:(BOOL)fromFront
+{
+    if (currBucket == currIterationNumber && currBucketIndex == [buckets[currBucket] count]-1)
+    {
+        //move on to next round
+        
+        for (int i = currIterationNumber+1; i < [buckets count]; i++)
+        {
+            for (int j=0; j< [buckets[i] count]; j++)
+            {
+                nextBuckets[i][j] = buckets[i][j];
+            }
+        }
+        
+        if (currIterationNumber == [buckets count] - 1)
+        {
+            currIterationNumber = 0;
+        }
+        else
+        {
+            currIterationNumber++;
+        }
+        currBucket = 0;
+        currBucketIndex = 0;
+        
+        NSArray* temp = buckets;
+        buckets = nextBuckets;
+        nextBuckets = temp;
+    }
+    else if (currBucketIndex == [buckets[currBucket] count]-1)
+    {
+        currBucket++;
+        currBucketIndex = 0;
+    }
+    else
+    {
+        currBucketIndex++;
+    }
+    //update currBucket
+    //update currIterationNumber
+        //swap buckets and nextBuckets
+    //update currBucketIndex
+    //update currController
+
+    while (currBucketIndex == 0 && [buckets[currBucket] count] == 0)
+    {
+        if (currBucket == currIterationNumber)
+        {
+            currIterationNumber++;
+        }
+        currBucket++;
+    }
+    
+    currController = buckets[currBucket][currBucketIndex];
+    RKContentViewController* nextVC = currController[0];
+    
+    if (fromFront)
+    {
+        [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    }
+    else
+    {
+        [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    }
+    
+    currIsFront = YES;
+}
+
+
 //single tap: switch to back
 //double-tap: hide nav bar from both self and next
 
@@ -240,8 +225,15 @@
     if (sender.state == UIGestureRecognizerStateEnded)
     {
         //switch to other side of card
-        RKContentViewController* nextVC = [self viewControllerAtIndex:cardNumber isFront:!currIsFront];
-        [pageController setViewControllers:[NSArray arrayWithObject:nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        if (currIsFront)
+        {
+            [pageController setViewControllers:[NSArray arrayWithObject:currController[1]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }
+        else
+        {
+            [pageController setViewControllers:[NSArray arrayWithObject:currController[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }
+        currIsFront = !currIsFront;
     }
 }
  
@@ -263,8 +255,29 @@
 -(void)dealloc
 {
     [pageController release];
-    [frontPageContent release];
-    [backPageContent release];
+    for (int i=0; i<[buckets count]; i++)
+    {
+        for (int j=0; j<[buckets[i] count]; j++)
+        {
+            [buckets[i][j][0] release];
+            [buckets[i][j][1] release];
+            [buckets[i][j] release];
+        }
+        [buckets[i] release];
+    }
+    [buckets release];
+    
+    for (int i=0; i<[nextBuckets count]; i++)
+    {
+        for (int j=0; j<[nextBuckets[i] count]; j++)
+        {
+            [nextBuckets[i][j][0] release];
+            [nextBuckets[i][j][1] release];
+            [nextBuckets[i][j] release];
+        }
+        [nextBuckets[i] release];
+    }
+    [nextBuckets release];
     [_model release];
     [super dealloc];
 }

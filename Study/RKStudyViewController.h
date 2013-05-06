@@ -17,24 +17,21 @@
     RKModel* _model;
     NSMutableArray* cards;
     UInt32 listNumber;
-    UInt32 cardNumber;
     
     UIPageViewController *pageController;
-    NSArray *frontPageContent;
-    NSArray *backPageContent;
+    NSArray *currController;
     BOOL currIsFront;
     
-    //~5 buckets
+    //4 buckets
     NSArray* buckets;
+        //buckets[currBucket][currBucketIndex][front/back]
     NSArray* nextBuckets;
-    UInt32 currBucket;
-    UInt32 currBucketNumber;
-    UInt32 currBucketIndex;
+    UInt32 currBucket;     //0,1,2,3
+    UInt32 currIterationNumber;  //0,1,2,3
+    UInt32 currBucketIndex;  //0...n/4
 }
 
 @property (strong, nonatomic) UIPageViewController *pageController;
-@property (strong, nonatomic) NSArray *frontPageContent;
-@property (strong, nonatomic) NSArray *backPageContent;
 
 -(void)loadListIndex:(UInt32)listIndex;
 
