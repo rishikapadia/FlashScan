@@ -7,6 +7,7 @@
 //
 
 #import "RKOCRViewController.h"
+#import "RKAddCardViewController.h"
 #include <math.h>
 static inline double radians (double degrees) {return degrees * M_PI/180;}
 
@@ -51,6 +52,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	iv = nil;
     [textField release];
     textField = nil;
+    [flashCard release];
+    
+    [imagePickerController release];
     
     [camera release];
     [album release];
@@ -251,6 +255,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 - (void)sendFlashcard:(RKFlashCard*)card isFrontImage:(BOOL)isFront
 {
     flashCard = card;
+    [flashCard retain];
     isFrontImage = isFront;
 }
 

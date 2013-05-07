@@ -55,5 +55,4 @@
 - (IBAction)albumFront:(id)sender;
 - (IBAction)albumBack:(id)sender;
 
-
 @end

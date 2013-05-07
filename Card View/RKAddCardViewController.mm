@@ -23,7 +23,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -67,7 +66,6 @@
     alert.tag = 1;
     [alert show];
     [alert release];
-    [self flipCardToBack];
 }
 
 - (IBAction)textBack:(id)sender
@@ -93,6 +91,7 @@
         {
             NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
             curr._frontText = [[alertView textFieldAtIndex:0] text];
+            [self flipCardToBack];
         }
     }
     else if (alertView.tag == 2)
@@ -151,10 +150,10 @@
 {
     //push RKOCR
     RKOCRViewController *ocr = [[RKOCRViewController alloc] initWithNibName:@"RKOCRViewController" bundle:nil];
+    [ocr sendFlashcard:curr isFrontImage:YES];
     
     [[self navigationController] pushViewController:ocr animated:YES];
     [ocr release];
-    [ocr sendFlashcard:curr isFrontImage:YES];
     
     [self flipCardToBack];
 }
@@ -165,18 +164,22 @@
 {
     //push RKOCR
     RKOCRViewController *ocr = [[RKOCRViewController alloc] initWithNibName:@"RKOCRViewController" bundle:nil];
+    [ocr sendFlashcard:curr isFrontImage:NO];
+    
+    [_model addCardtoList:_listIndex card:curr];
+    [curr release];
+    
+    //pop this view from stack
+    //[[self navigationController] popViewControllerAnimated:YES];
     
     [[self navigationController] pushViewController:ocr animated:YES];
     [ocr release];
-    [ocr sendFlashcard:curr isFrontImage:NO];
-    
-    [self addFlashcard];
 }
 
 
 
 - (void)viewDidLoad
-{
+{    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _model = [RKModel sharedModel];
