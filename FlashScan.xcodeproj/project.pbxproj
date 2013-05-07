@@ -28,6 +28,8 @@
 		7702656F1722646000501FC3 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702656E1722646000501FC3 /* libtesseract_full.a */; };
 		7708B8291727A5AA00570D1A /* RKListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7708B8271727A5AA00570D1A /* RKListViewController.mm */; };
 		7708B82A1727A5AA00570D1A /* RKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7708B8281727A5AA00570D1A /* RKListViewController.xib */; };
+		770A84D51738B72C00E59A1B /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 770A84D31738B72C00E59A1B /* icon-retina.png */; };
+		770A84D61738B72C00E59A1B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 770A84D41738B72C00E59A1B /* icon.png */; };
 		773CE22E1728A9BB00E84388 /* RKCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 773CE22C1728A9BB00E84388 /* RKCardViewController.mm */; };
 		773CE22F1728A9BB00E84388 /* RKCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773CE22D1728A9BB00E84388 /* RKCardViewController.xib */; };
 		773CE2331728F04800E84388 /* RKListSelectViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 773CE2311728F04800E84388 /* RKListSelectViewController.mm */; };
@@ -118,6 +120,8 @@
 		7708B8261727A5AA00570D1A /* RKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKListViewController.h; path = "List View/RKListViewController.h"; sourceTree = "<group>"; };
 		7708B8271727A5AA00570D1A /* RKListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKListViewController.mm; path = "List View/RKListViewController.mm"; sourceTree = "<group>"; };
 		7708B8281727A5AA00570D1A /* RKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKListViewController.xib; path = "List View/RKListViewController.xib"; sourceTree = "<group>"; };
+		770A84D31738B72C00E59A1B /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "Resources/icon-retina.png"; sourceTree = "<group>"; };
+		770A84D41738B72C00E59A1B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
 		773CE22B1728A9BB00E84388 /* RKCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKCardViewController.h; path = "Card View/RKCardViewController.h"; sourceTree = "<group>"; };
 		773CE22C1728A9BB00E84388 /* RKCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RKCardViewController.mm; path = "Card View/RKCardViewController.mm"; sourceTree = "<group>"; };
 		773CE22D1728A9BB00E84388 /* RKCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RKCardViewController.xib; path = "Card View/RKCardViewController.xib"; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				7798F6E31728FC6A008C48EE /* flashcards.jpeg */,
+				770A84D31738B72C00E59A1B /* icon-retina.png */,
+				770A84D41738B72C00E59A1B /* icon.png */,
 				77FE20EC172B910900F12DE8 /* abstract.jpg */,
 				77FE20ED172B910900F12DE8 /* background.jpg */,
 			);
@@ -385,6 +391,8 @@
 				777CC523173359B000964C14 /* RKStudyViewController.xib in Resources */,
 				777CC528173373AE00964C14 /* RKNormalViewController.xib in Resources */,
 				777CC52D1733853700964C14 /* RKContentViewController.xib in Resources */,
+				770A84D51738B72C00E59A1B /* icon-retina.png in Resources */,
+				770A84D61738B72C00E59A1B /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
